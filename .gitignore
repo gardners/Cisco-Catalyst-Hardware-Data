@@ -1,0 +1,10 @@
+# KiCad working copies / caches
+*-backups/
+*.kicad_prl
+*-cache.lib
+*-rescue.lib
+*.lck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_pro-bak
+.DS_Store

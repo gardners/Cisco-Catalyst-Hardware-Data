@@ -1,0 +1,14 @@
+property,value,unit,provenance,notes
+nominal_chassis_height,44.5,mm,vendor,1RU
+nominal_chassis_width,445,mm,vendor,excluding rack ears
+nominal_24port_depth,460,mm,vendor,other variants may be deeper
+interior_height,40,mm,estimate,location dependent
+interior_depth,400,mm,estimate,not a rectangular interior
+front_to_psu_side,140,mm,estimate,PSU side only
+mainboard_boss_height,6,mm,estimate,verify individual bosses
+original_mainboard_thickness,2.4,mm,measurement,approx
+front_bay_left,80,mm,estimate,one area
+front_bay_other,90,mm,estimate,four areas
+front_upper_vent,8,mm,estimate,original openings
+front_lower_light_pipes,24,count,observation,four sets of six
+front_upper_light_pipes,6,count,observation,near small console PCB

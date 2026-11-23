@@ -1,0 +1,3 @@
+LED,anode pin (red),cathode pin (black),observed colour,meter reading mV,reverse test,connection
+CR9,1,2,yellow,1616,OL,A1 via R25 130R to VDD / K2 to U1 pin1
+CR9,4,3,green,1681,OL,A4 direct to VDD / K3 to U2 pin19

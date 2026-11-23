@@ -1,0 +1,21 @@
+J2 physical pin,Photo orientation,Resistance to GND (unpowered),Functional net,Continuity evidence / notes,Confidence
+1,top,open to GND,SW1_N,"SW1 pad 1, other switch pads 2 and 3 to GND; pad 4 appears open",METER measured and datasheet function identified
+2,top-to-bottom,~0 ohm,GND,Continuity to chassis tab,METER measured / naming confirmed
+3,top-to-bottom,~885 ohm,USB_D+,J1 pin 3 and probable USB protection IC pin 4,METER measured / naming confirmed
+4,top-to-bottom,~885 ohm,USB_D-,J1 pin 2 and probable USB protection IC pin 6,METER measured / naming confirmed
+5,top-to-bottom,~0 ohm,GND,Continuity to chassis tab,METER measured / naming confirmed
+6,top-to-bottom,infinity,USB_VBUS,J1 pin 1,METER measured / naming confirmed
+7,top-to-bottom,infinity,USB_VBUS,J1 pin 1,METER measured / naming confirmed
+8,top-to-bottom,~0 ohm,GND,Continuity to chassis tab,METER measured / naming confirmed
+9,top-to-bottom,~727 ohm,LOGIC_VDD,U1 pin 16 (corrected); U2 pin 24; rail voltage unknown,METER measured / naming confirmed
+10,top-to-bottom,~727 ohm,LOGIC_VDD,Same as J2 pin 9,METER measured / naming confirmed
+11,top-to-bottom,infinity,TESTPAD_ONLY_UNCONFIRMED_NC,Short PCB trace terminating at test pad; no continuation seen; not electrically proven NC,VISUAL; remaining circuit path unresolved
+12,top-to-bottom,infinity,SERIAL_QH_PRIME_OUT,User visual trace under U2 to U1 pin 9 (QH-prime serial output); verify with meter,VISUAL RECONSTRUCTION; continuity check recommended
+13,top-to-bottom,~1753 ohm,LED_OE_N,"U1 pin 13 and U2 pin 21, both active-low OE",METER measured and datasheet function identified
+14,top-to-bottom,infinity,LED_DATA,U2 pin 2 SDI,METER measured and datasheet function identified
+15,top-to-bottom,~873 ohm,LED_CLK,U1 pin 11 SRCLK and U2 pin 3 CLK,METER measured and datasheet function identified
+16,top-to-bottom,~0 ohm,GND,Continuity to chassis tab,METER measured / naming confirmed
+17,top-to-bottom,~873 ohm,LED_LATCH,U1 pin 12 RCLK and U2 pin 4 LE,METER measured and datasheet function identified
+18,top-to-bottom,~953 ohm,AUX_SINK_J2_18,"U2 pin 5 OUT0 via R23, value roughly 200 ohm (unconfirmed)",METER reported connectivity; passives provisional
+19,top-to-bottom,~953 ohm,AUX_SINK_J2_19,U2 pin 6 OUT1 via R22; resistor value not measured,METER reported connectivity; resistor value unknown
+20,bottom,~0 ohm,GND,Continuity to chassis tab,METER measured / naming confirmed

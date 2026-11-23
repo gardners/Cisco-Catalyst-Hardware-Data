@@ -1,0 +1,13 @@
+plane_name,underside_coordinate_mm,derivation,confidence
+front_y,-54.17,single H04 front edge + hole radius,MEASURED-INFERRED
+upper_left_x,-13.13,H01/H07 rim-to-edge converted,FITTED
+upper_right_x,350.42,H04/H05/H09 rim-to-edge converted,FITTED
+extended_right_x,420.22,H12/H15/H17/H19 rim-to-edge converted,FITTED
+lower_left_x,312.58,H16/H18 rim-to-edge converted,FITTED
+notch_left_x,168.77,H11 local rim-to-edge converted,SINGLE POINT
+notch_middle_x,205.85,H14 local rim-to-edge converted,SINGLE POINT
+first_shoulder_y,87.6,H07/H08 rear edge converted,FITTED
+H11_shoulder_y,148.96,recent H11 local rear edge measurement,SINGLE POINT
+H14_laminate_rear_y,248.7,"H14 laminate end, approx 248-249",APPROXIMATE
+rear_y,338.02,"H18 rear edge, reported later measurement",SINGLE POINT
+upper_right_transition_y,128,photographic interpolation,PHOTO ESTIMATE

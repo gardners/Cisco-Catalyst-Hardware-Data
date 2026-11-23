@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-45.1 -99.2 497.4 492.2" width="1400" height="1320">
+<rect x="-1000" y="-1000" width="3000" height="3000" fill="#fafaf8"/>
+<g font-family="Arial,sans-serif" font-size="5" fill="#162a3b">
+<polygon points="-13.13,-54.17 350.42,-54.17 350.42,128.00 420.22,128.00 420.22,338.02 312.58,338.02 312.58,248.70 205.85,248.70 205.85,148.96 168.77,148.96 168.77,87.60 -13.13,87.60" fill="#e2edf4" fill-opacity=".85" stroke="#11618b" stroke-width="1.2"/>
+<circle cx="350.42" cy="128.00" r="2.5" stroke="#d27027" fill="#fdf0e5" stroke-width="0.7"/>
+<circle cx="420.22" cy="128.00" r="2.5" stroke="#d27027" fill="#fdf0e5" stroke-width="0.7"/>
+<circle cx="312.58" cy="248.70" r="2.5" stroke="#d27027" fill="#fdf0e5" stroke-width="0.7"/>
+<circle cx="205.85" cy="248.70" r="2.5" stroke="#d27027" fill="#fdf0e5" stroke-width="0.7"/>
+<circle cx="205.85" cy="148.96" r="2.5" stroke="#d27027" fill="#fdf0e5" stroke-width="0.7"/>
+<circle cx="168.77" cy="148.96" r="2.5" stroke="#d27027" fill="#fdf0e5" stroke-width="0.7"/>
+<circle cx="0.000" cy="0.000" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M-3.00,0.00h6 M0.00,-3.00v6" stroke="#146b40" stroke-width=".35"/>
+<text x="3.0" y="-2.0" font-size="5">H01</text>
+<circle cx="103.000" cy="0.000" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M100.00,0.00h6 M103.00,-3.00v6" stroke="#146b40" stroke-width=".35"/>
+<text x="106.0" y="-2.0" font-size="5">H02</text>
+<circle cx="185.000" cy="0.000" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M182.00,0.00h6 M185.00,-3.00v6" stroke="#146b40" stroke-width=".35"/>
+<text x="188.0" y="-2.0" font-size="5">H03</text>
+<circle cx="267.000" cy="0.000" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M264.00,0.00h6 M267.00,-3.00v6" stroke="#146b40" stroke-width=".35"/>
+<text x="270.0" y="-2.0" font-size="5">H04</text>
+<circle cx="318.426" cy="37.244" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M315.43,37.24h6 M318.43,34.24v6" stroke="#146b40" stroke-width=".35"/>
+<text x="321.4" y="35.2" font-size="5">H05</text>
+<circle cx="217.855" cy="56.317" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M214.85,56.32h6 M217.85,53.32v6" stroke="#146b40" stroke-width=".35"/>
+<text x="220.9" y="54.3" font-size="5">H06</text>
+<circle cx="54.291" cy="75.232" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M51.29,75.23h6 M54.29,72.23v6" stroke="#146b40" stroke-width=".35"/>
+<text x="57.3" y="73.2" font-size="5">H07</text>
+<circle cx="160.668" cy="75.621" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M157.67,75.62h6 M160.67,72.62v6" stroke="#146b40" stroke-width=".35"/>
+<text x="163.7" y="73.6" font-size="5">H08</text>
+<circle cx="318.298" cy="107.738" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M315.30,107.74h6 M318.30,104.74v6" stroke="#146b40" stroke-width=".35"/>
+<text x="321.3" y="105.7" font-size="5">H09</text>
+<circle cx="302.751" cy="117.393" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M299.75,117.39h6 M302.75,114.39v6" stroke="#146b40" stroke-width=".35"/>
+<text x="305.8" y="115.4" font-size="5">H10</text>
+<circle cx="184.247" cy="143.886" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M181.25,143.89h6 M184.25,140.89v6" stroke="#146b40" stroke-width=".35"/>
+<text x="187.2" y="141.9" font-size="5">H11</text>
+<circle cx="385.951" cy="165.328" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M382.95,165.33h6 M385.95,162.33v6" stroke="#146b40" stroke-width=".35"/>
+<text x="389.0" y="163.3" font-size="5">H12</text>
+<circle cx="302.860" cy="187.814" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M299.86,187.81h6 M302.86,184.81v6" stroke="#146b40" stroke-width=".35"/>
+<text x="305.9" y="185.8" font-size="5">H13</text>
+<circle cx="219.228" cy="238.668" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M216.23,238.67h6 M219.23,235.67v6" stroke="#146b40" stroke-width=".35"/>
+<text x="222.2" y="236.7" font-size="5">H14</text>
+<circle cx="385.938" cy="235.633" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M382.94,235.63h6 M385.94,232.63v6" stroke="#146b40" stroke-width=".35"/>
+<text x="388.9" y="233.6" font-size="5">H15</text>
+<circle cx="327.096" cy="273.536" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M324.10,273.54h6 M327.10,270.54v6" stroke="#146b40" stroke-width=".35"/>
+<text x="330.1" y="271.5" font-size="5">H16</text>
+<circle cx="397.580" cy="273.403" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M394.58,273.40h6 M397.58,270.40v6" stroke="#146b40" stroke-width=".35"/>
+<text x="400.6" y="271.4" font-size="5">H17</text>
+<circle cx="327.021" cy="320.146" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M324.02,320.15h6 M327.02,317.15v6" stroke="#146b40" stroke-width=".35"/>
+<text x="330.0" y="318.1" font-size="5">H18</text>
+<circle cx="376.994" cy="320.231" r="1.875" fill="white" stroke="#146b40" stroke-width=".65"/>
+<path d="M373.99,320.23h6 M376.99,317.23v6" stroke="#146b40" stroke-width=".35"/>
+<text x="380.0" y="318.2" font-size="5">H19</text>
+<circle cx="-2.13" cy="81.25" r="1.8" fill="none" stroke="#d35b11" stroke-width=".8" stroke-dasharray="1.5,0.9"/>
+<circle cx="29.62" cy="81.25" r="1.8" fill="none" stroke="#d35b11" stroke-width=".8" stroke-dasharray="1.5,0.9"/>
+<line x1="-2.13" y1="87.60" x2="29.62" y2="87.60" stroke="#d35b11" stroke-width="1.5" stroke-dasharray="2,1.3"/>
+<text x="13.7" y="96.6" font-size="4.4" fill="#9d480c" text-anchor="middle">PSU-A ?</text>
+<circle cx="88.87" cy="81.25" r="1.8" fill="none" stroke="#d35b11" stroke-width=".8" stroke-dasharray="1.5,0.9"/>
+<circle cx="120.62" cy="81.25" r="1.8" fill="none" stroke="#d35b11" stroke-width=".8" stroke-dasharray="1.5,0.9"/>
+<line x1="88.87" y1="87.60" x2="120.62" y2="87.60" stroke="#d35b11" stroke-width="1.5" stroke-dasharray="2,1.3"/>
+<text x="104.7" y="96.6" font-size="4.4" fill="#9d480c" text-anchor="middle">PSU-B ?</text>
+<text x="-41.1" y="-83.2" font-size="9" font-weight="bold">UNDERSIDE VIEW — original survey coordinates</text>
+<text x="-41.1" y="-75.2" font-size="5.2">19 triangulated hole centres | blue perimeter PROVISIONAL | orange PSU connector hypotheses</text>
+<text x="-41.1" y="380.0" font-size="5.0">Source: 53 hole-distance readings; 0.159 mm fit RMS; not calibrated absolute accuracy.</text>
+<text x="-41.1" y="388.0" font-size="5.0">Connector positions and several perimeter steps are provisional. NOT a drill or cutting diagram.</text>
+</g></svg>

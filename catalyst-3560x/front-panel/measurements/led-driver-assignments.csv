@@ -1,0 +1,21 @@
+LED,LED cathode pin,Driver output,Colour,Evidence
+CR1,2,U2/8,Unknown,User continuity measurement
+CR1,3,U2/7,Unknown,User continuity measurement
+CR2,2,U2/9,Unknown,User continuity measurement
+CR2,3,U2/10,Unknown,User continuity measurement
+CR3,2,U2/14,Unknown,User continuity measurement
+CR3,3,U2/13,Unknown,User continuity measurement
+CR4,2,U1/3,Unknown,User continuity measurement
+CR4,3,U1/2,Unknown,User continuity measurement
+CR5,2,U1/7,Unknown,User continuity measurement
+CR5,3,U1/6,Unknown,User continuity measurement
+CR6,2,U2/12,Unknown,User continuity measurement
+CR6,3,U2/11,Unknown,User continuity measurement
+CR7,2,U2/18,Unknown,User continuity measurement
+CR7,3,U2/17,Unknown,User continuity measurement
+CR8,2,U2/16,Unknown,User continuity measurement
+CR8,3,U2/15,Unknown,User continuity measurement
+CR9,2,U1/1,YELLOW (1->2; Vf=1.616V at meter test current),User continuity measurement
+CR9,3,U2/19,GREEN (4->3; Vf=1.681V at meter test current),User continuity measurement
+CR10,2,U1/5,Unknown,User continuity measurement
+CR10,3,U1/4,Unknown,User continuity measurement

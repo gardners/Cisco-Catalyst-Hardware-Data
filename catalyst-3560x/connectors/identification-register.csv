@@ -1,0 +1,10 @@
+assembly,observed_interface,candidate_or_identification,status,notes
+PSU,2 power + 16 signal,Amphenol 51760-10101601AALF,CANDIDATE,Mating header 51720-10101601AALF; mechanical match not verified
+PSU socket board locks,31.75mm pitch / 6.35mm edge setback,Amphenol family drawing overlay,INFERRED,unverified absolute positions
+Front-panel J2,20 pins,unknown,UNIDENTIFIED,needs pitch and external dimensions
+Front-panel J1,Mini USB B,type known; OEM unknown,TYPE KNOWN,USB2 mini type B
+Front-panel SW1,4 landing pads,unknown,UNIDENTIFIED,switch absent
+C3KX-FAN-23CFM,cartridge header,unknown,UNIDENTIFIED,pin count/wiring unverified
+C3KX-NM-10G,removable uplink module,unknown,UNIDENTIFIED,internal connector unmeasured
+XPS,external power link,Cisco XPS-2200,UNSURVEYED,port pinout not studied
+3750-X stacks,StackWise / StackPower,Cisco family interfaces,UNSURVEYED,not 3560-X generic
