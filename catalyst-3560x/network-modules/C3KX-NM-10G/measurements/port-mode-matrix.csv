@@ -1,0 +1,5 @@
+group_A_G1_G2,group_B_G3_G4,aggregate,evidence
+G1 1G + G2 1G,G3 1G + G4 1G,Refer Cisco 3560-X/3750-X Network Module Notes,Cisco installation notes
+G1 1G + G2 1G,G4 10G,Refer Cisco 3560-X/3750-X Network Module Notes,Cisco installation notes
+G2 10G,G3 1G + G4 1G,Refer Cisco 3560-X/3750-X Network Module Notes,Cisco installation notes
+G2 10G,G4 10G,Refer Cisco 3560-X/3750-X Network Module Notes,Cisco installation notes

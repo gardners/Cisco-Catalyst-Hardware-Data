@@ -1,0 +1,325 @@
+ball,signal,class,confidence,notes
+A1,XAUI_RX_1N0,XR,R (Terasic U6 reference only),"XAUI channel 1 RX lane 0 (PHY to host), negative"
+A2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+A3,XAUI_RX_1N1,XR,R (Terasic U6 reference only),"XAUI channel 1 RX lane 1 (PHY to host), negative"
+A4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+A5,XAUI_RX_1N2,XR,R (Terasic U6 reference only),"XAUI channel 1 RX lane 2 (PHY to host), negative"
+A6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+A7,XAUI_RX_1N3,XR,R (Terasic U6 reference only),"XAUI channel 1 RX lane 3 (PHY to host), negative"
+A8,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+A9,PRTAD02,MG,R (Terasic U6 reference only),MDIO port PHY address channel 2 low bit
+A10,PRTAD01,MG,R (Terasic U6 reference only),MDIO port PHY address channel 1 low bit
+A11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+A12,XAUI_TX_2P0,XT,R (Terasic U6 reference only),"XAUI channel 2 TX lane 0 (host to PHY), positive"
+A13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+A14,XAUI_TX_2P1,XT,R (Terasic U6 reference only),"XAUI channel 2 TX lane 1 (host to PHY), positive"
+A15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+A16,XAUI_TX_2P2,XT,R (Terasic U6 reference only),"XAUI channel 2 TX lane 2 (host to PHY), positive"
+A17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+A18,XAUI_TX_2P3,XT,R (Terasic U6 reference only),"XAUI channel 2 TX lane 3 (host to PHY), positive"
+B1,XAUI_RX_1P0,XR,R (Terasic U6 reference only),"XAUI channel 1 RX lane 0 (PHY to host), positive"
+B2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+B3,XAUI_RX_1P1,XR,R (Terasic U6 reference only),"XAUI channel 1 RX lane 1 (PHY to host), positive"
+B4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+B5,XAUI_RX_1P2,XR,R (Terasic U6 reference only),"XAUI channel 1 RX lane 2 (PHY to host), positive"
+B6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+B7,XAUI_RX_1P3,XR,R (Terasic U6 reference only),"XAUI channel 1 RX lane 3 (PHY to host), positive"
+B8,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+B9,PRTAD1,MG,R (Terasic U6 reference only),Shared PHY address bit 1
+B10,PRTAD3,MG,R (Terasic U6 reference only),Shared PHY address bit 3
+B11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+B12,XAUI_TX_2N0,XT,R (Terasic U6 reference only),"XAUI channel 2 TX lane 0 (host to PHY), negative"
+B13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+B14,XAUI_TX_2N1,XT,R (Terasic U6 reference only),"XAUI channel 2 TX lane 1 (host to PHY), negative"
+B15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+B16,XAUI_TX_2N2,XT,R (Terasic U6 reference only),"XAUI channel 2 TX lane 2 (host to PHY), negative"
+B17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+B18,XAUI_TX_2N3,XT,R (Terasic U6 reference only),"XAUI channel 2 TX lane 3 (host to PHY), negative"
+C1,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C5,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C8,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C9,PRTAD2,MG,R (Terasic U6 reference only),Shared PHY address bit 2
+C10,PRTAD4,MG,R (Terasic U6 reference only),Shared PHY address bit 4
+C11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C12,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+C18,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D1,XAUI_TX_1P3,XT,R (Terasic U6 reference only),"XAUI channel 1 TX lane 3 (host to PHY), positive"
+D2,XAUI_TX_1N3,XT,R (Terasic U6 reference only),"XAUI channel 1 TX lane 3 (host to PHY), negative"
+D3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D5,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D8,MDC2,MG,R (Terasic U6 reference only),MDIO management clock; common clock in single PHY mode
+D9,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D10,OPOUTLVL,CT,R (Terasic U6 reference only),Optical control output level selection
+D11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D12,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+D17,XAUI_RX_2P0,XR,R (Terasic U6 reference only),"XAUI channel 2 RX lane 0 (PHY to host), positive"
+D18,XAUI_RX_2N0,XR,R (Terasic U6 reference only),"XAUI channel 2 RX lane 0 (PHY to host), negative"
+E1,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E5,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E7,LASI1,ST,R (Terasic U6 reference only),Link alarm status interrupt channel 1
+E8,MDIO2,MG,R (Terasic U6 reference only),MDIO data; common data in single PHY mode
+E9,PHYRESET,CT,R (Terasic U6 reference only),Active-low PHY reset
+E10,OPINLVL,CT,R (Terasic U6 reference only),Optical control input level selection
+E11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E12,TXONOFF2,CT,R (Terasic U6 reference only),Transmit driver enable/disable channel 2
+E13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+E18,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+F1,XAUI_TX_1P2,XT,R (Terasic U6 reference only),"XAUI channel 1 TX lane 2 (host to PHY), positive"
+F2,XAUI_TX_1N2,XT,R (Terasic U6 reference only),"XAUI channel 1 TX lane 2 (host to PHY), negative"
+F3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+F4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+F5,MOSI1,NV,R (Terasic U6 reference only),SPI ROM MOSI channel 1
+F6,TXONOFF1,CT,R (Terasic U6 reference only),Transmit driver enable/disable channel 1
+F7,SMBWEN,CT,R (Terasic U6 reference only),Two-wire interface write enable
+F8,SMB_SDA1,MG,R (Terasic U6 reference only),Two-wire optical management data channel 1; open-drain
+F9,SMB_SCL1,MG,R (Terasic U6 reference only),Two-wire optical management clock channel 1; open-drain
+F10,SMB_SDA2,MG,R (Terasic U6 reference only),Two-wire optical management data channel 2; open-drain
+F11,SMB_SCL2,MG,R (Terasic U6 reference only),Two-wire optical management clock channel 2; open-drain
+F12,MOSI2,NV,R (Terasic U6 reference only),SPI ROM MOSI channel 2
+F13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+F14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+F15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+F16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+F17,XAUI_RX_2P1,XR,R (Terasic U6 reference only),"XAUI channel 2 RX lane 1 (PHY to host), positive"
+F18,XAUI_RX_2N1,XR,R (Terasic U6 reference only),"XAUI channel 2 RX lane 1 (PHY to host), negative"
+G1,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+G2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+G3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+G4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+G5,MISO1,NV,R (Terasic U6 reference only),SPI ROM MISO channel 1
+G6,PCMULK1,ST,R (Terasic U6 reference only),PMD clock multiplication unit lock channel 1
+G7,NC/MDC_1,MG,R (Terasic U6 reference only),Alternate MDIO clock channel 1 in dual-device mode; otherwise NC
+G8,NC/MDIO_1,MG,R (Terasic U6 reference only),Alternate MDIO data channel 1 in dual-device mode; otherwise NC
+G9,NVMPROT,NV,R (Terasic U6 reference only),Nonvolatile memory protection
+G10,MOD_ABS1,ST,R (Terasic U6 reference only),Optical module absent indication channel 1
+G11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+G12,MISO2,NV,R (Terasic U6 reference only),SPI ROM MISO channel 2
+G13,GPIO0_2,IO,R (Terasic U6 reference only),Programmable GPIO channel 2
+G14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+G15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+G16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+G17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+G18,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+H1,XAUI_TX_1P1,XT,R (Terasic U6 reference only),"XAUI channel 1 TX lane 1 (host to PHY), positive"
+H2,XAUI_TX_1N1,XT,R (Terasic U6 reference only),"XAUI channel 1 TX lane 1 (host to PHY), negative"
+H3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+H4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+H5,PLOSB1,ST,R (Terasic U6 reference only),PMD loss of signal indication channel 1
+H6,PCDRLK1,ST,R (Terasic U6 reference only),PMD clock/data recovery lock indication channel 1
+H7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+H8,OPTXFLT1,ST,R (Terasic U6 reference only),Optical TX fault indicator channel 1
+H9,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+H10,SER_BOOT,NV,R (Terasic U6 reference only),SPI ROM boot enable; active high per Terasic
+H11,PLOSB2,ST,R (Terasic U6 reference only),PMD loss of signal indication channel 2
+H12,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+H13,GPIO1_2,IO,R (Terasic U6 reference only),Programmable GPIO channel 2
+H14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+H15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+H16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+H17,XAUI_RX_2P2,XR,R (Terasic U6 reference only),"XAUI channel 2 RX lane 2 (PHY to host), positive"
+H18,XAUI_RX_2N2,XR,R (Terasic U6 reference only),"XAUI channel 2 RX lane 2 (PHY to host), negative"
+J1,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+J2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+J3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+J4,SFP_TXDIS1,CT,R (Terasic U6 reference only),Optical transmitter disable channel 1; open-drain according to Terasic
+J5,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+J6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+J7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+J8,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+J9,CONFIG1_1,CT,R (Terasic U6 reference only),Configuration mode channel 1 bit 1; internal pulldown
+J10,CONFIG1_2,CT,R (Terasic U6 reference only),Configuration mode channel 2 bit 1; internal pulldown
+J11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+J12,SFP_TXDIS2,CT,R (Terasic U6 reference only),Optical transmitter disable channel 2; open-drain according to Terasic
+J13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+J14,OPTXFLT2,ST,R (Terasic U6 reference only),Optical TX fault indicator channel 2
+J15,SMBSPDSEL2,CT,R (Terasic U6 reference only),Two-wire serial bus speed selection channel 2
+J16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+J17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+J18,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+K1,XAUI_TX_1P0,XT,R (Terasic U6 reference only),"XAUI channel 1 TX lane 0 (host to PHY), positive"
+K2,XAUI_TX_1N0,XT,R (Terasic U6 reference only),"XAUI channel 1 TX lane 0 (host to PHY), negative"
+K3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+K4,OPTXRST1_1,CT,R (Terasic U6 reference only),Optical module reset channel 1
+K5,SCK1,NV,R (Terasic U6 reference only),Serial SPI ROM clock channel 1
+K6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+K7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+K8,SMBSPDSEL1,CT,R (Terasic U6 reference only),Two-wire serial bus speed selection channel 1
+K9,CONFIG0_1,CT,R (Terasic U6 reference only),Configuration mode channel 1 bit 0; internal pulldown
+K10,LASI2,ST,R (Terasic U6 reference only),Link alarm status interrupt channel 2
+K11,CONFIG0_2,CT,R (Terasic U6 reference only),Configuration mode channel 2 bit 0; internal pulldown
+K12,OPTXRST1_2,CT,R (Terasic U6 reference only),Optical module reset channel 2
+K13,TRSTB,CT,R (Terasic U6 reference only),JTAG test reset; active low
+K14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+K15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+K16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+K17,XAUI_RX_2P3,XR,R (Terasic U6 reference only),"XAUI channel 2 RX lane 3 (PHY to host), positive"
+K18,XAUI_RX_2N3,XR,R (Terasic U6 reference only),"XAUI channel 2 RX lane 3 (PHY to host), negative"
+L1,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L4,OPRXLOS1,ST,R (Terasic U6 reference only),Optical receiver loss of signal channel 1
+L5,SS_N1,NV,R (Terasic U6 reference only),SPI ROM chip select channel 1; active low
+L6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L8,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L9,GPIO0_1,IO,R (Terasic U6 reference only),Programmable GPIO channel 1
+L10,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L11,PCMULK2,ST,R (Terasic U6 reference only),PMD clock multiplication unit lock channel 2
+L12,OPRXLOS2,ST,R (Terasic U6 reference only),Optical receiver loss of signal channel 2
+L13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+L18,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M1,NVMA1SEL,NV,R (Terasic U6 reference only),Nonvolatile memory selection
+M2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M5,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M8,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M9,GPIO1_1,IO,R (Terasic U6 reference only),Programmable GPIO channel 1
+M10,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M11,SCK2,NV,R (Terasic U6 reference only),Serial SPI ROM clock channel 2
+M12,PCDRLK2,ST,R (Terasic U6 reference only),PMD clock/data recovery lock indication channel 2
+M13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+M18,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N1,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N5,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N8,MOD_ABS2,ST,R (Terasic U6 reference only),Optical module absent indication channel 2
+N9,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N10,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N11,SS_N2,NV,R (Terasic U6 reference only),SPI ROM chip select channel 2; active low
+N12,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+N18,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P1,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P5,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P8,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P9,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P10,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P12,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+P18,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R1,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R5,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R8,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R9,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R10,PEXTCLK156_N,CK,R (Terasic U6 reference only),156.25 MHz reference clock negative
+R11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R12,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R14,RB_CAL_VSS,AN,R (Terasic U6 reference only),Resistor calibration return; Terasic reports unused
+R15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+R18,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T1,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T5,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T8,RDICM_1,AN,R (Terasic U6 reference only),Receiver input common-mode channel 1
+T9,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T10,PEXTCLK156_P,CK,R (Terasic U6 reference only),156.25 MHz reference clock positive
+T11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T12,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T14,RB_CAL,AN,R (Terasic U6 reference only),Resistor calibration analog terminal; Terasic reports unused
+T15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+T18,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U1,RCLKP_1,CK,R (Terasic U6 reference only),Recovered clock channel 1 positive
+U2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U3,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U4,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U5,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U6,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U7,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U8,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U9,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U10,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U12,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U13,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U15,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U16,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+U18,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+V1,RCLKN_1,CK,R (Terasic U6 reference only),Recovered clock channel 1 negative
+V2,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+V3,SFI_TX_N1,SX,R (Terasic U6 reference only),Serial line transmitter channel 1 negative
+V4,SFI_TX_P1,SX,R (Terasic U6 reference only),Serial line transmitter channel 1 positive
+V5,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+V6,SFI_RX_P1,SR,R (Terasic U6 reference only),Serial line receiver channel 1 positive
+V7,SFI_RX_N1,SR,R (Terasic U6 reference only),Serial line receiver channel 1 negative
+V8,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+V9,RCLKP_2,CK,R (Terasic U6 reference only),Recovered clock channel 2 positive
+V10,RCLKN_2,CK,R (Terasic U6 reference only),Recovered clock channel 2 negative
+V11,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+V12,SFI_TX_N2,SX,R (Terasic U6 reference only),Serial line transmitter channel 2 negative
+V13,SFI_TX_P2,SX,R (Terasic U6 reference only),Serial line transmitter channel 2 positive
+V14,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+V15,SFI_RX_P2,SR,R (Terasic U6 reference only),Serial line receiver channel 2 positive
+V16,SFI_RX_N2,SR,R (Terasic U6 reference only),Serial line receiver channel 2 negative
+V17,UNKNOWN,??,U (unidentified; NOT equivalent to NC),Function not documented in cited public sources
+V18,RDICM_2,AN,R (Terasic U6 reference only),Receiver input common-mode channel 2

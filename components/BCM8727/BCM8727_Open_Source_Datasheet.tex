@@ -1,0 +1,360 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{sourcesanspro}
+\usepackage[a4paper,margin=18mm,headheight=16pt,footskip=11mm]{geometry}
+\usepackage{microtype,booktabs,longtable,tabularx,array,enumitem,xcolor,colortbl,hyperref,fancyhdr,graphicx,pdflscape,multicol}
+\definecolor{navy}{HTML}{15334B}
+\definecolor{blue}{HTML}{275D8B}
+\definecolor{pale}{HTML}{ECF3F8}
+\definecolor{amber}{HTML}{98630D}
+\definecolor{clrx}{HTML}{B1D6F1}
+\definecolor{cltx}{HTML}{D5EAF8}
+\definecolor{clsr}{HTML}{FBCFC6}
+\definecolor{clsx}{HTML}{FFE2CC}
+\definecolor{clmg}{HTML}{DAE9BB}
+\definecolor{clck}{HTML}{F2E2A1}
+\definecolor{clnv}{HTML}{D7CCED}
+\definecolor{clct}{HTML}{EDE6D5}
+\definecolor{clst}{HTML}{DDE8E9}
+\definecolor{clio}{HTML}{D9D9FF}
+\definecolor{clan}{HTML}{FFD5A5}
+\definecolor{clun}{HTML}{F2F2F2}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=navy,pdftitle={BCM8727 Open-Source Technical Datasheet},pdfauthor={Independent engineering reference compilation}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlength{\LTpre}{4pt}
+\setlength{\LTpost}{5pt}
+\renewcommand{\arraystretch}{1.14}
+\setlist[itemize]{leftmargin=15pt,itemsep=1pt,topsep=1pt}
+\pagestyle{fancy}\fancyhf{}\lhead{\footnotesize\color{navy} BCM8727 | OPEN TECHNICAL DATASHEET}\rhead{\footnotesize Rev 0.2 | 24 Nov 2026}\cfoot{\footnotesize\thepage}
+\newcommand{\m}[1]{\textsf{\color{blue}\bfseries #1}}
+\newcommand{\unk}{\textsf{\color{amber}\bfseries U}}
+\newcommand{\src}[1]{\textsuperscript{[#1]}}
+\begin{document}
+{\small\color{blue} OPEN SOURCE TECHNICAL REFERENCE / INDEPENDENT COMPILATION}\par
+\vspace{3mm}{\color{navy}\fontsize{25}{27}\selectfont\bfseries BCM8727}\par
+\vspace{1mm}{\large Dual-channel 10GbE SFI--XAUI transceiver with EDC}\par
+\vspace{2mm}\hrule height 1pt\relax\vspace{3mm}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{30mm}X>{\bfseries}p{25mm}X@{}}
+Document & B8727-OSDS-001 & Revision & 0.2 \\
+Family & BCM8727 & Date & 24 November 2026 \\
+Package & 324-ball BGA, 19 x 19 mm & Interface & 2 x XAUI + 2 x SFI \\
+Status & Independent, partial public-data compilation & Approval & NOT for PCB release
+\end{tabularx}
+\vspace{2mm}
+\vspace{1mm}
+\noindent\textbf{Latest edition and source:} \url{https://github.com/gardners/Cisco-Catalyst-Hardware-Data}\\
+\textbf{Repository location:} \texttt{components/BCM8727/}. Check the repository for corrections, newer revisions and complete BGA CSV.\par
+\vspace{2mm}
+\colorbox{pale}{\parbox{0.96\linewidth}{\small\textbf{Scope:} An independently assembled, data-oriented specification of the Broadcom BCM8727 PHY family. Numeric properties and individual balls are attributed to identified public evidence. The 324-ball register is complete as a \emph{position index}, but \textbf{not} a complete functional pinout. Unknown positions must never be interpreted as NC. Suffix-specific package equivalence, electrical limits and power sequencing require manufacturer confirmation.}}
+\section{Evidence codes and confidence}
+\begin{tabularx}{\linewidth}{@{}p{20mm}X@{}}\toprule
+\textbf{Code} & \textbf{Meaning and design use} \\\midrule
+\m{P} & Published by original semiconductor manufacturer (Broadcom product brief). Public summary only; not necessarily a guaranteed electrical limit. \\
+\m{R} & Named BGA ball or characteristic reported in an independent PCB manufacturer's working reference design (Terasic U6). Applies to its BCM8727, but suffix/revision transfer is unconfirmed. \\
+\m{S} & Operational register or behaviour supported by public Linux driver source or Intel/Altera interoperability design, not necessarily a manufacturer guarantee. \\
+\m{I} & Engineering inference derived from cited data; assumption stated and may require verification. \\
+\unk & Not identified in the cited open material. \textbf{Unknown is not NC, VSS, or VDD.} No net or voltage may be assigned from this state. \\\bottomrule
+\end{tabularx}
+The default source for every named package ball is Terasic's U6 Table 4-1 \src{T}; confidence \m{R} unless another mark is shown. The row/column pattern is based on a nominal full 18 x 18 array \m{I}; physical A1 orientation has not been validated against Broadcom packaging artwork.
+\section{Device summary}
+\begin{tabularx}{\linewidth}{@{}p{58mm}Xl@{}}\toprule
+Item & Value / description & Evidence\\\midrule
+Channels & Two independent 10GbE SFI-to-XAUI PHY channels & P\src{B}\\
+Host serial interface & Four TX and four RX XAUI lanes per channel & P\src{B}\\
+XAUI per-lane line rate & 3.125 Gbit/s; 8b/10b; deskew and synchronization & P\src{B}\\
+SFI line rate & 10.3125 Gbit/s, 64b/66b and clock recovery & P\src{B}\\
+1GbE operation & 1000BASE-X / multirate support; specific mode tables unavailable & P\src{B}\\
+Media & SR/LR/LRM optics; passive twinax to 15 m (brief claim) & P\src{B}\\
+Digital management & IEEE 802.3 Clause 45 MDIO; Broadcom 2-wire BSC & P\src{B}\\
+Boot / firmware & Embedded microcontroller; external SPI ROM signals identified & P/R\src{B}\src{T}\\
+Diagnostics & XAUI, PMD loopback/BIST and link alarm/status (details incomplete) & P/S\src{B}\src{L}\\
+Core supply & 1.0 V nominal; tolerance / sequencing \unk & P\src{B}\\
+I/O supply & 3.3 V nominal; thresholds for each bank \unk & P\src{B}\\
+Dissipation & 2.4 W (product-brief figure; conditions \unk) & P\src{B}\\
+Reference clock & External 156.25 MHz differential input (jitter spec \unk) & P/R\src{B}\src{T}\\
+Package & 324 balls, 19 x 19 mm, 1 mm nominal pitch & P\src{B}\\
+Compatible footprint & BCM8726 footprint compatibility claimed; pin-to-pin proof \unk & P\src{B}\\
+Absolute maximum ratings & \unk & U\\
+Operating temperature limits & \unk & U\\
+Power-supply tolerances / current by rail & \unk & U\\
+SFI input sensitivity / output swing & \unk & U\\
+XAUI input/output common-mode, termination & \unk & U\\
+ESD ratings, solder reflow, MSL & \unk & U\\
+\bottomrule\end{tabularx}
+\section{Signal interfaces}
+\subsection{XAUI host interface}
+\begin{tabularx}{\linewidth}{@{}p{40mm}p{43mm}X@{}}\toprule
+Property & Per channel & Notes\\\midrule
+Differential conductors & 4 TX pairs + 4 RX pairs & 8 pairs per channel, 16 pairs total (two channels).\\
+Speed & 3.125 Gbit/s per pair & Encoded 8b/10b, 2.5 Gbit/s payload per lane.\\
+Effective interface payload & 10 Gbit/s per direction & Four-lane logical 10GbE link.\\
+Clocking & CDR + on-chip retimers & Shared 156.25 MHz reference pair at T10/R10 \m{R}.\\
+Polarity, swapping and lane ordering & \unk & Do not assume reordering and polarity inversion are configurable.\\\bottomrule\end{tabularx}
+\subsection{SFI / PMD line interface}
+\begin{tabularx}{\linewidth}{@{}p{55mm}X@{}}\toprule
+Property & Value / status\\\midrule
+Per-port data & One 10.3125 Gbit/s TX pair and one RX pair (CML).\\
+Coding & 64b/66b with PCS gearbox and scrambler/descrambler.\\
+EDC & DSP-based equalization for linear optical modules and LRM.\\
+TX amplitude and pre-emphasis & Software programmable; register values and ranges \unk.\\
+Clock output & Differential recovered clock per channel; use/timing \unk.\\
+Media adaptation & SFP+/XFP control, module present, optical LOS/fault, serial bus.\\
+Electrical coupling and impedances & \unk; board-dependent implementation.\\\bottomrule\end{tabularx}
+\section{Power, reset and clock}
+\begin{tabularx}{\linewidth}{@{}p{51mm}Xl@{}}\toprule
+Parameter & Nominal / observation & Code\\\midrule
+Core and digital I/O rails & 1.0 V and 3.3 V respectively & P\\
+Power dissipation & 2.4 W; maximum and measurement basis unknown & P\\
+Power-up sequence & Not publicly specified & U\\
+Power-good / reset timing & Not publicly specified & U\\
+Reset pin & E9 PHYRESET, active low & R\\
+156.25 MHz clock input & T10 PEXTCLK156\_P, R10 PEXTCLK156\_N & R\\
+Clock differential amplitude/jitter & Not publicly specified & U\\
+Analogue calibration & T14 RB\_CAL, R14 RB\_CAL\_VSS; Terasic marks unused & R\\
+Ground/power ball map & Not publicly available; \textbf{do not assign} & U\\
+\bottomrule\end{tabularx}
+\section{Management and status}
+\subsection{MDIO and PHY identification}
+Clause 45 device addressing and MMD accesses are supported \m{P}. Terasic U6 shows MDC2/MDIO2, optional dual-device MDC1/MDIO1, and hardware PHY address straps \m{R}. Linux's \texttt{bcm87xx} driver identifies BCM8727 using PHY ID \texttt{0x0143bff0} read from PHYXS (MMD 4) identity fields \m{S}\src{L}. This ID is a driver-match constant, not a proof that all suffix revisions use it.
+\begin{tabularx}{\linewidth}{@{}p{46mm}p{20mm}p{27mm}X@{}}\toprule
+Status / control & MMD & Register & Observable property (Linux)\\\midrule
+PMD RX detect & 1 (PMA/PMD) & 0x000A & bit 0 checked for signal detect\\
+10GBASE-R PCS status & 3 (PCS) & 0x0020 & bit 0 checked for PCS status\\
+XGXS lane status & 4 (PHYXS) & 0x0018 & bit 12 (0x1000) checked for lane alignment\\
+LASI interrupt control & 3 (PCS) & 0x9002 & bit 0 enable/disable in driver\\
+LASI interrupt status & 3 (PCS) & 0x9005 & latched status read in driver\\
+Vendor 1G mode, EDC, DAC setup & various & \unk & See \texttt{bnx2x\_link.c} for board-dependent examples.\\
+\bottomrule\end{tabularx}
+\subsection{Boot, NVM and optics-control pins}
+The device exposes SPI ROM clocks, data and chip select per channel; serial boot enable at H10; a configurable BSC/two-wire interface, and per-channel optics control/status. The presence of these pins does not establish a mandatory external ROM image or boot algorithm. The public product brief does not provide an ordered register initialisation sequence, strap truth table, default PHY addresses, nor firmware image format. Each is \unk.
+\section{Package and BGA naming}
+Broadcom specifies 324 balls in a 19 x 19 mm body with 1 mm pitch \m{P}. The following index assumes a full 18-by-18 grid with row labels \texttt{A B C D E F G H J K L M N P R T U V} and columns 1--18 \m{I}; all 324 positions are indexed. Terasic provides names for \textbf{110} positions \m{R}. The remaining \textbf{214} positions are uncharacterised \unk, including potentially critical supply and ground balls. \textbf{Do not design a footprint from this index without the manufacturer's package mechanical drawing and verified A1 orientation.}
+\subsection{Complete 324-position class matrix}
+\begin{landscape}
+\small
+\textbf{Figure: logical ball-index matrix, not a solder-footprint orientation diagram.} Each cell reports the signal class (see legend); ? means function unknown.\\[2mm]
+\resizebox{0.90\linewidth}{!}{%
+\begin{tabular}{@{}r|*{18}{c}@{}}\toprule
+\textbf{Row} & \multicolumn{18}{c}{\textbf{Ball number}}\\
+ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 \\\midrule
+A & \cellcolor{clrx}XR & \cellcolor{clun}? & \cellcolor{clrx}XR & \cellcolor{clun}? & \cellcolor{clrx}XR & \cellcolor{clun}? & \cellcolor{clrx}XR & \cellcolor{clun}? & \cellcolor{clmg}MG & \cellcolor{clmg}MG & \cellcolor{clun}? & \cellcolor{cltx}XT & \cellcolor{clun}? & \cellcolor{cltx}XT & \cellcolor{clun}? & \cellcolor{cltx}XT & \cellcolor{clun}? & \cellcolor{cltx}XT\\
+B & \cellcolor{clrx}XR & \cellcolor{clun}? & \cellcolor{clrx}XR & \cellcolor{clun}? & \cellcolor{clrx}XR & \cellcolor{clun}? & \cellcolor{clrx}XR & \cellcolor{clun}? & \cellcolor{clmg}MG & \cellcolor{clmg}MG & \cellcolor{clun}? & \cellcolor{cltx}XT & \cellcolor{clun}? & \cellcolor{cltx}XT & \cellcolor{clun}? & \cellcolor{cltx}XT & \cellcolor{clun}? & \cellcolor{cltx}XT\\
+C & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clmg}MG & \cellcolor{clmg}MG & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}?\\
+D & \cellcolor{cltx}XT & \cellcolor{cltx}XT & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clmg}MG & \cellcolor{clun}? & \cellcolor{clct}CT & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clrx}XR & \cellcolor{clrx}XR\\
+E & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clst}ST & \cellcolor{clmg}MG & \cellcolor{clct}CT & \cellcolor{clct}CT & \cellcolor{clun}? & \cellcolor{clct}CT & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}?\\
+F & \cellcolor{cltx}XT & \cellcolor{cltx}XT & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clnv}NV & \cellcolor{clct}CT & \cellcolor{clct}CT & \cellcolor{clmg}MG & \cellcolor{clmg}MG & \cellcolor{clmg}MG & \cellcolor{clmg}MG & \cellcolor{clnv}NV & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clrx}XR & \cellcolor{clrx}XR\\
+G & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clnv}NV & \cellcolor{clst}ST & \cellcolor{clmg}MG & \cellcolor{clmg}MG & \cellcolor{clnv}NV & \cellcolor{clst}ST & \cellcolor{clun}? & \cellcolor{clnv}NV & \cellcolor{clio}IO & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}?\\
+H & \cellcolor{cltx}XT & \cellcolor{cltx}XT & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clst}ST & \cellcolor{clst}ST & \cellcolor{clun}? & \cellcolor{clst}ST & \cellcolor{clun}? & \cellcolor{clnv}NV & \cellcolor{clst}ST & \cellcolor{clun}? & \cellcolor{clio}IO & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clrx}XR & \cellcolor{clrx}XR\\
+J & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clct}CT & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clct}CT & \cellcolor{clct}CT & \cellcolor{clun}? & \cellcolor{clct}CT & \cellcolor{clun}? & \cellcolor{clst}ST & \cellcolor{clct}CT & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}?\\
+K & \cellcolor{cltx}XT & \cellcolor{cltx}XT & \cellcolor{clun}? & \cellcolor{clct}CT & \cellcolor{clnv}NV & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clct}CT & \cellcolor{clct}CT & \cellcolor{clst}ST & \cellcolor{clct}CT & \cellcolor{clct}CT & \cellcolor{clct}CT & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clrx}XR & \cellcolor{clrx}XR\\
+L & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clst}ST & \cellcolor{clnv}NV & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clio}IO & \cellcolor{clun}? & \cellcolor{clst}ST & \cellcolor{clst}ST & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}?\\
+M & \cellcolor{clnv}NV & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clio}IO & \cellcolor{clun}? & \cellcolor{clnv}NV & \cellcolor{clst}ST & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}?\\
+N & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clst}ST & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clnv}NV & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}?\\
+P & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}?\\
+R & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clck}CK & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clan}AN & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}?\\
+T & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clan}AN & \cellcolor{clun}? & \cellcolor{clck}CK & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clan}AN & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}?\\
+U & \cellcolor{clck}CK & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}? & \cellcolor{clun}?\\
+V & \cellcolor{clck}CK & \cellcolor{clun}? & \cellcolor{clsx}SX & \cellcolor{clsx}SX & \cellcolor{clun}? & \cellcolor{clsr}SR & \cellcolor{clsr}SR & \cellcolor{clun}? & \cellcolor{clck}CK & \cellcolor{clck}CK & \cellcolor{clun}? & \cellcolor{clsx}SX & \cellcolor{clsx}SX & \cellcolor{clun}? & \cellcolor{clsr}SR & \cellcolor{clsr}SR & \cellcolor{clun}? & \cellcolor{clan}AN\\
+\bottomrule\end{tabular}}
+\vspace{3mm}\par
+\begin{tabularx}{\linewidth}{@{}llllll@{}}
+\cellcolor{clrx}XR & XAUI RX & \cellcolor{cltx}XT & XAUI TX & \cellcolor{clsr}SR & SFI RX \\
+\cellcolor{clsx}SX & SFI TX & \cellcolor{clmg}MG & management & \cellcolor{clck}CK & clock \\
+\cellcolor{clnv}NV & SPI/NVM & \cellcolor{clct}CT & controls & \cellcolor{clst}ST & status \\
+\cellcolor{clio}IO & GPIO & \cellcolor{clan}AN & analogue & \cellcolor{clun}? & \textbf{unknown}\\
+\end{tabularx}
+\end{landscape}
+\subsection{Named balls (Terasic U6 reference assignments)}
+All ball-to-signal mappings in this table are \m{R} -- Terasic's BCM8727 U6 design. Pin functions are abbreviated descriptions, not Broadcom electrical specifications. On that design, \texttt{TX} and \texttt{RX} denote PHY input and output respectively (for XAUI).
+\small
+\begin{longtable}{@{}p{12mm}p{44mm}p{10mm}p{91mm}@{}}\toprule
+Ball & Signal & Class & Function / notes\\\midrule\endfirsthead
+\toprule Ball & Signal & Class & Function / notes\\\midrule\endhead
+A1 & XAUI\_RX\_1N0 & XR & XAUI channel 1 RX lane 0 (PHY to host), negative\\
+A3 & XAUI\_RX\_1N1 & XR & XAUI channel 1 RX lane 1 (PHY to host), negative\\
+A5 & XAUI\_RX\_1N2 & XR & XAUI channel 1 RX lane 2 (PHY to host), negative\\
+A7 & XAUI\_RX\_1N3 & XR & XAUI channel 1 RX lane 3 (PHY to host), negative\\
+A9 & PRTAD02 & MG & MDIO port PHY address channel 2 low bit\\
+A10 & PRTAD01 & MG & MDIO port PHY address channel 1 low bit\\
+A12 & XAUI\_TX\_2P0 & XT & XAUI channel 2 TX lane 0 (host to PHY), positive\\
+A14 & XAUI\_TX\_2P1 & XT & XAUI channel 2 TX lane 1 (host to PHY), positive\\
+A16 & XAUI\_TX\_2P2 & XT & XAUI channel 2 TX lane 2 (host to PHY), positive\\
+A18 & XAUI\_TX\_2P3 & XT & XAUI channel 2 TX lane 3 (host to PHY), positive\\
+B1 & XAUI\_RX\_1P0 & XR & XAUI channel 1 RX lane 0 (PHY to host), positive\\
+B3 & XAUI\_RX\_1P1 & XR & XAUI channel 1 RX lane 1 (PHY to host), positive\\
+B5 & XAUI\_RX\_1P2 & XR & XAUI channel 1 RX lane 2 (PHY to host), positive\\
+B7 & XAUI\_RX\_1P3 & XR & XAUI channel 1 RX lane 3 (PHY to host), positive\\
+B9 & PRTAD1 & MG & Shared PHY address bit 1\\
+B10 & PRTAD3 & MG & Shared PHY address bit 3\\
+B12 & XAUI\_TX\_2N0 & XT & XAUI channel 2 TX lane 0 (host to PHY), negative\\
+B14 & XAUI\_TX\_2N1 & XT & XAUI channel 2 TX lane 1 (host to PHY), negative\\
+B16 & XAUI\_TX\_2N2 & XT & XAUI channel 2 TX lane 2 (host to PHY), negative\\
+B18 & XAUI\_TX\_2N3 & XT & XAUI channel 2 TX lane 3 (host to PHY), negative\\
+C9 & PRTAD2 & MG & Shared PHY address bit 2\\
+C10 & PRTAD4 & MG & Shared PHY address bit 4\\
+D1 & XAUI\_TX\_1P3 & XT & XAUI channel 1 TX lane 3 (host to PHY), positive\\
+D2 & XAUI\_TX\_1N3 & XT & XAUI channel 1 TX lane 3 (host to PHY), negative\\
+D8 & MDC2 & MG & MDIO management clock; common clock in single PHY mode\\
+D10 & OPOUTLVL & CT & Optical control output level selection\\
+D17 & XAUI\_RX\_2P0 & XR & XAUI channel 2 RX lane 0 (PHY to host), positive\\
+D18 & XAUI\_RX\_2N0 & XR & XAUI channel 2 RX lane 0 (PHY to host), negative\\
+E7 & LASI1 & ST & Link alarm status interrupt channel 1\\
+E8 & MDIO2 & MG & MDIO data; common data in single PHY mode\\
+E9 & PHYRESET & CT & Active-low PHY reset\\
+E10 & OPINLVL & CT & Optical control input level selection\\
+E12 & TXONOFF2 & CT & Transmit driver enable/disable channel 2\\
+F1 & XAUI\_TX\_1P2 & XT & XAUI channel 1 TX lane 2 (host to PHY), positive\\
+F2 & XAUI\_TX\_1N2 & XT & XAUI channel 1 TX lane 2 (host to PHY), negative\\
+F5 & MOSI1 & NV & SPI ROM MOSI channel 1\\
+F6 & TXONOFF1 & CT & Transmit driver enable/disable channel 1\\
+F7 & SMBWEN & CT & Two-wire interface write enable\\
+F8 & SMB\_SDA1 & MG & Two-wire optical management data channel 1; open-drain\\
+F9 & SMB\_SCL1 & MG & Two-wire optical management clock channel 1; open-drain\\
+F10 & SMB\_SDA2 & MG & Two-wire optical management data channel 2; open-drain\\
+F11 & SMB\_SCL2 & MG & Two-wire optical management clock channel 2; open-drain\\
+F12 & MOSI2 & NV & SPI ROM MOSI channel 2\\
+F17 & XAUI\_RX\_2P1 & XR & XAUI channel 2 RX lane 1 (PHY to host), positive\\
+F18 & XAUI\_RX\_2N1 & XR & XAUI channel 2 RX lane 1 (PHY to host), negative\\
+G5 & MISO1 & NV & SPI ROM MISO channel 1\\
+G6 & PCMULK1 & ST & PMD clock multiplication unit lock channel 1\\
+G7 & NC/MDC\_1 & MG & Alternate MDIO clock channel 1 in dual-device mode; otherwise NC\\
+G8 & NC/MDIO\_1 & MG & Alternate MDIO data channel 1 in dual-device mode; otherwise NC\\
+G9 & NVMPROT & NV & Nonvolatile memory protection\\
+G10 & MOD\_ABS1 & ST & Optical module absent indication channel 1\\
+G12 & MISO2 & NV & SPI ROM MISO channel 2\\
+G13 & GPIO0\_2 & IO & Programmable GPIO channel 2\\
+H1 & XAUI\_TX\_1P1 & XT & XAUI channel 1 TX lane 1 (host to PHY), positive\\
+H2 & XAUI\_TX\_1N1 & XT & XAUI channel 1 TX lane 1 (host to PHY), negative\\
+H5 & PLOSB1 & ST & PMD loss of signal indication channel 1\\
+H6 & PCDRLK1 & ST & PMD clock/data recovery lock indication channel 1\\
+H8 & OPTXFLT1 & ST & Optical TX fault indicator channel 1\\
+H10 & SER\_BOOT & NV & SPI ROM boot enable; active high per Terasic\\
+H11 & PLOSB2 & ST & PMD loss of signal indication channel 2\\
+H13 & GPIO1\_2 & IO & Programmable GPIO channel 2\\
+H17 & XAUI\_RX\_2P2 & XR & XAUI channel 2 RX lane 2 (PHY to host), positive\\
+H18 & XAUI\_RX\_2N2 & XR & XAUI channel 2 RX lane 2 (PHY to host), negative\\
+J4 & SFP\_TXDIS1 & CT & Optical transmitter disable channel 1; open-drain according to Terasic\\
+J9 & CONFIG1\_1 & CT & Configuration mode channel 1 bit 1; internal pulldown\\
+J10 & CONFIG1\_2 & CT & Configuration mode channel 2 bit 1; internal pulldown\\
+J12 & SFP\_TXDIS2 & CT & Optical transmitter disable channel 2; open-drain according to Terasic\\
+J14 & OPTXFLT2 & ST & Optical TX fault indicator channel 2\\
+J15 & SMBSPDSEL2 & CT & Two-wire serial bus speed selection channel 2\\
+K1 & XAUI\_TX\_1P0 & XT & XAUI channel 1 TX lane 0 (host to PHY), positive\\
+K2 & XAUI\_TX\_1N0 & XT & XAUI channel 1 TX lane 0 (host to PHY), negative\\
+K4 & OPTXRST1\_1 & CT & Optical module reset channel 1\\
+K5 & SCK1 & NV & Serial SPI ROM clock channel 1\\
+K8 & SMBSPDSEL1 & CT & Two-wire serial bus speed selection channel 1\\
+K9 & CONFIG0\_1 & CT & Configuration mode channel 1 bit 0; internal pulldown\\
+K10 & LASI2 & ST & Link alarm status interrupt channel 2\\
+K11 & CONFIG0\_2 & CT & Configuration mode channel 2 bit 0; internal pulldown\\
+K12 & OPTXRST1\_2 & CT & Optical module reset channel 2\\
+K13 & TRSTB & CT & JTAG test reset; active low\\
+K17 & XAUI\_RX\_2P3 & XR & XAUI channel 2 RX lane 3 (PHY to host), positive\\
+K18 & XAUI\_RX\_2N3 & XR & XAUI channel 2 RX lane 3 (PHY to host), negative\\
+L4 & OPRXLOS1 & ST & Optical receiver loss of signal channel 1\\
+L5 & SS\_N1 & NV & SPI ROM chip select channel 1; active low\\
+L9 & GPIO0\_1 & IO & Programmable GPIO channel 1\\
+L11 & PCMULK2 & ST & PMD clock multiplication unit lock channel 2\\
+L12 & OPRXLOS2 & ST & Optical receiver loss of signal channel 2\\
+M1 & NVMA1SEL & NV & Nonvolatile memory selection\\
+M9 & GPIO1\_1 & IO & Programmable GPIO channel 1\\
+M11 & SCK2 & NV & Serial SPI ROM clock channel 2\\
+M12 & PCDRLK2 & ST & PMD clock/data recovery lock indication channel 2\\
+N8 & MOD\_ABS2 & ST & Optical module absent indication channel 2\\
+N11 & SS\_N2 & NV & SPI ROM chip select channel 2; active low\\
+R10 & PEXTCLK156\_N & CK & 156.25 MHz reference clock negative\\
+R14 & RB\_CAL\_VSS & AN & Resistor calibration return; Terasic reports unused\\
+T8 & RDICM\_1 & AN & Receiver input common-mode channel 1\\
+T10 & PEXTCLK156\_P & CK & 156.25 MHz reference clock positive\\
+T14 & RB\_CAL & AN & Resistor calibration analog terminal; Terasic reports unused\\
+U1 & RCLKP\_1 & CK & Recovered clock channel 1 positive\\
+V1 & RCLKN\_1 & CK & Recovered clock channel 1 negative\\
+V3 & SFI\_TX\_N1 & SX & Serial line transmitter channel 1 negative\\
+V4 & SFI\_TX\_P1 & SX & Serial line transmitter channel 1 positive\\
+V6 & SFI\_RX\_P1 & SR & Serial line receiver channel 1 positive\\
+V7 & SFI\_RX\_N1 & SR & Serial line receiver channel 1 negative\\
+V9 & RCLKP\_2 & CK & Recovered clock channel 2 positive\\
+V10 & RCLKN\_2 & CK & Recovered clock channel 2 negative\\
+V12 & SFI\_TX\_N2 & SX & Serial line transmitter channel 2 negative\\
+V13 & SFI\_TX\_P2 & SX & Serial line transmitter channel 2 positive\\
+V15 & SFI\_RX\_P2 & SR & Serial line receiver channel 2 positive\\
+V16 & SFI\_RX\_N2 & SR & Serial line receiver channel 2 negative\\
+V18 & RDICM\_2 & AN & Receiver input common-mode channel 2\\
+\bottomrule\end{longtable}
+\normalsize
+\subsection{Unidentified ball positions -- explicit unknown index}
+\textbf{Unknown does NOT mean NC.} The following positions are in the nominal 18 x 18 ball array but have no publicly verified signal name in the cited source. Some necessarily implement power and ground; their identities are unknown.\par
+\small
+\begin{longtable}{@{}p{16mm}p{125mm}p{16mm}@{}}\toprule
+Row & Unknown column numbers & Count\\\midrule\endfirsthead
+\toprule Row & Unknown columns & Count\\\midrule\endhead
+A & 2, 4, 6, 8, 11, 13, 15, 17 & 8\\
+B & 2, 4, 6, 8, 11, 13, 15, 17 & 8\\
+C & 1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18 & 16\\
+D & 3, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15, 16 & 12\\
+E & 1, 2, 3, 4, 5, 6, 11, 13, 14, 15, 16, 17, 18 & 13\\
+F & 3, 4, 13, 14, 15, 16 & 6\\
+G & 1, 2, 3, 4, 11, 14, 15, 16, 17, 18 & 10\\
+H & 3, 4, 7, 9, 12, 14, 15, 16 & 8\\
+J & 1, 2, 3, 5, 6, 7, 8, 11, 13, 16, 17, 18 & 12\\
+K & 3, 6, 7, 14, 15, 16 & 6\\
+L & 1, 2, 3, 6, 7, 8, 10, 13, 14, 15, 16, 17, 18 & 13\\
+M & 2, 3, 4, 5, 6, 7, 8, 10, 13, 14, 15, 16, 17, 18 & 14\\
+N & 1, 2, 3, 4, 5, 6, 7, 9, 10, 12, 13, 14, 15, 16, 17, 18 & 16\\
+P & 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 & 18\\
+R & 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 15, 16, 17, 18 & 16\\
+T & 1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, 15, 16, 17, 18 & 15\\
+U & 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 & 17\\
+V & 2, 5, 8, 11, 14, 17 & 6\\
+\bottomrule\end{longtable}
+\normalsize
+\section{Known high-speed differential pin pairs}
+\subsection{XAUI pairs (PHY perspective)}
+\small
+\begin{tabular}{@{}cccccc|cccccc@{}}\toprule
+Ch & Dir & Lane & N & P & Role & Ch & Dir & Lane & N & P & Role\\\midrule
+1 & RX & 0 & A1 & B1 & PHY out & 2 & RX & 0 & D18 & D17 & PHY out\\
+1 & TX & 0 & K2 & K1 & PHY in & 2 & TX & 0 & B12 & A12 & PHY in\\
+1 & RX & 1 & A3 & B3 & PHY out & 2 & RX & 1 & F18 & F17 & PHY out\\
+1 & TX & 1 & H2 & H1 & PHY in & 2 & TX & 1 & B14 & A14 & PHY in\\
+1 & RX & 2 & A5 & B5 & PHY out & 2 & RX & 2 & H18 & H17 & PHY out\\
+1 & TX & 2 & F2 & F1 & PHY in & 2 & TX & 2 & B16 & A16 & PHY in\\
+1 & RX & 3 & A7 & B7 & PHY out & 2 & RX & 3 & K18 & K17 & PHY out\\
+1 & TX & 3 & D2 & D1 & PHY in & 2 & TX & 3 & B18 & A18 & PHY in\\
+\bottomrule\end{tabular}\normalsize
+\subsection{SFI and reference clock pairs}
+\begin{tabularx}{\linewidth}{@{}p{47mm}p{33mm}p{30mm}X@{}}\toprule
+Differential function & Positive & Negative & Direction (at PHY)\\\midrule
+SFI RX channel 1 & V6 & V7 & input\\
+SFI TX channel 1 & V4 & V3 & output\\
+SFI RX channel 2 & V15 & V16 & input\\
+SFI TX channel 2 & V13 & V12 & output\\
+156.25 MHz reference & T10 & R10 & input\\
+Recovered clock channel 1 & U1 & V1 & output\\
+Recovered clock channel 2 & V9 & V10 & output\\\bottomrule\end{tabularx}
+\section{Unavailable data required for a production circuit}
+\begin{tabularx}{\linewidth}{@{}p{54mm}X@{}}\toprule
+Data class & Missing values / verification condition\\\midrule
+Electrical limiting values & Absolute maximum voltages, ESD, short circuit, latch-up, per-pin IO thresholds and leakage.\\
+Supply network & Every VDD/VSS BGA ball; 1V and 3.3V rail subdivisions; sequencing, current and decoupling.\\
+Timing and clocks & Ref clock input tolerance, jitter, output clock phase/noise, reset strap hold/setup, MDIO timings.\\
+Signal integrity & XAUI/SFI swing, termination, AC coupling, CML bias, insertion loss, impedance, EDC adaptation limits.\\
+PHY functionality & Detailed 1000BASE-X rate-adaptation path, MDIO 1G configuration, link/LOS state machine, polarity/lane controls.\\
+Boot & SER\_BOOT behaviour, SPI flash contents, boot sequencing, fault fallback.\\
+Package & Ball A1 corner, package height and ball diameter, coplanarity, land/stencil, MSL, thermal resistance.\\
+Software & Complete vendor register map, defaults, bit definitions, recommended firmware and init sequence.\\\bottomrule\end{tabularx}
+\section{References}
+\small
+\begin{description}[leftmargin=11mm,labelwidth=9mm,style=nextline]
+\item[{[B]}] Broadcom, \emph{BCM8727 Product Brief}, document 8727-PB00-R (16 Mar 2009). \url{https://docs.broadcom.com/doc/12358272}
+\item[{[T]}] Terasic, \emph{Dual XAUI to SFP+ HSMC Board User Manual}, Table 4-1 BCM8727 U6 net connections and section 4.3 clocking. \url{https://datasheet.ersaelectronics.com/static/datasheets/terasic/terasic-p0092.pdf}
+\item[{[A]}] Altera/Intel, \emph{AN 638: 10-Gbps Ethernet Interoperability Hardware Demonstration Reference Design}. \url{https://cdrdv2-public.intel.com/655128/an638.pdf}
+\item[{[L]}] Linux kernel, \texttt{drivers/net/phy/bcm87xx.c}, PHY ID and Clause 45 status/interrupts (GPL-2.0 source). \url{https://codebrowser.dev/linux/linux/drivers/net/phy/bcm87xx.c.html}
+\item[{[N]}] Linux kernel, \texttt{drivers/net/ethernet/broadcom/bnx2x/bnx2x\_link.c}, PHY/SFP handling implementation (GPL-2.0 source). \url{https://codebrowser.dev/linux/linux/drivers/net/ethernet/broadcom/bnx2x/bnx2x_link.c.html}
+\item[{[D]}] Linux kernel, \emph{Broadcom BCM87xx device-tree binding}, optional \texttt{broadcom,c45-reg-init} property. \url{https://github.com/torvalds/linux/blob/master/Documentation/devicetree/bindings/net/broadcom-bcm87xx.txt}
+\item[{[F]}] Terasic, \emph{XSFP FAQ}, notes that detailed Broadcom device documentation is not redistributed by Terasic. \url{https://www.terasic.com.tw/wiki/XSFP_FAQ}
+\end{description}
+\vspace{2mm}\hrule\vspace{2mm}\footnotesize Latest version: \url{https://github.com/gardners/Cisco-Catalyst-Hardware-Data}.\par This is an independent original compilation of factual characteristics and selected signal assignments with source attribution. It is not endorsed or verified by Broadcom. Neither vendor PDF pages nor third-party photographs are reproduced. Unknown positions remain intentionally unspecified.\normalsize
+\end{document}
