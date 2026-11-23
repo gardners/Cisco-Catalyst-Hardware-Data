@@ -32,4 +32,6 @@ The original donor chassis was discussed as 3560-X/3750-X; PCB shapes and interf
 
 ### Licence
 
-No licence file is supplied in this archive. Choose and add an explicit repository licence before public release. Manufacturer trademarks and published drawings remain their owners' property.
+Unless otherwise noted, the original content in this repository is licensed under the GNU Lesser General Public License, version 3 or (at your option) any later version (`LGPL-3.0-or-later`). See [LICENSE](LICENSE) for the licence notice, [COPYING.LESSER](COPYING.LESSER) for the LGPL terms, and [COPYING](COPYING) for the incorporated GPL version 3 terms.
+
+Manufacturer trademarks and third-party copyrighted materials remain the property of their respective owners and are not relicensed by this notice.
