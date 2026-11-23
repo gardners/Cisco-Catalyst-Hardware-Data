@@ -16,3 +16,21 @@
 | [Surplus part inventory mentioning 1926945-2](https://www.aaaconnectors.com/en/products/inventory-1.html) | TE header 8Power reference; **not proof of -1 pinout or stock** |
 
 **Note:** Datasheets and third-party photos are linked, not mirrored here. The repository is limited to hardware measurement data, owner photos, and independent written observations.
+
+## Connector sourcing, checked 24 November 2026
+
+The verified mechanical *signal* mate is TE **1934318-1** for sled receptacle **1934225-1**. The externally fitted eight-power-contact overlay is independently marked **1926945-1** on the motherboard and **1926944-1** on the sled; these are **not** part numbers for the 192-way signal core. The 1926945-2 surplus listing is not confirmation that -2 mates with the observed -1 assembly.
+
+- [TE 1934318-1 manufacturer page, drawing, CAD and application spec](https://www.te.com/en/product-1934318-1.html)
+- [TE 1934225-1 mating receptacle manufacturer page](https://www.te.com/en/product-1934225-1.html)
+- [Tyco Z-PACK TinMan catalogue with mating table](https://datasheet.octopart.com/1934222-1-TE-Connectivity-datasheet-5316232.pdf)
+- [DigiKey AU 1934318-1](https://www.digikey.com.au/en/products/detail/te-connectivity-amp-connectors/1934318-1/4021741)
+- [Mouser 1934318-1](https://www.mouser.com/ProductDetail/TE-Connectivity/1934318-1)
+- [RS Americas 1934318-1](https://us.rs-online.com/product/te-connectivity/1934318-1/72136017/)
+- [Win Source inventory entry 1934318-1](https://win-source.net/category/memory-cards-modules/specialized/6)
+- [AAA Connectors inventory listing 1926945-2 (NOT exact -1)](https://www.aaaconnectors.com/en/products/inventory-1.html)
+- [Octopart search for 1934318-1](https://octopart.com/search?q=1934318-1) — search, not an independently verified offer.
+- [Octopart search for 1926945-1](https://octopart.com/search?q=1926945-1) — search, not an independently verified offer.
+- [Octopart search for 1926945-2](https://octopart.com/search?q=1926945-2) — search, not an independently verified offer.
+
+See [connector sourcing details](../connector/sourcing.md) for distinctions among observed moulding numbers, TE-approved mates, supplier stock and unverified substitutes.

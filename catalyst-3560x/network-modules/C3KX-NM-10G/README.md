@@ -29,6 +29,9 @@ This is a **hardware-observation repository**, not a chip datasheet or a propose
 - [04 switch motherboard connector rear](photos/04-switch-mainboard-connector-solder-side.jpg) (original file PXL_20261123_174602375.MACRO_FOCUS.jpg).
 - [05 switch motherboard connector marking](photos/05-switch-mainboard-connector-marking.jpg) (original file PXL_20261123_174634748.MACRO_FOCUS.jpg; `1926945-1`).
 
+- [06 mainboard connector PCB close-up](photos/06-mainboard-header-pressfit-footprint-closeup.jpg) (owner-supplied close-up, 24 Nov 2026).
+- [07 mainboard connector PCB and trace fan-out](photos/07-mainboard-header-trace-fanout.jpg) (owner-supplied wider close-up, 24 Nov 2026).
+
 The separate third-party promotional image previously shown in conversation is **not** included here.
 
 ## Cisco slot and port matrix
@@ -43,4 +46,4 @@ Per pair (G1/G2, G3/G4), Cisco specifies either **two 1GbE SFPs** or **one 10GbE
 - G1/G3 1000BASE-X paths, G2/G4 mode changes and high-speed AC coupling details.
 - Mechanical XY location of connector relative to the motherboard H01--H19 survey.
 
-See [connector inventory](connector/README.md) and [measurements](measurements/README.md).
+See [connector inventory](connector/README.md), [connector sourcing and manufacturer/distributor links](connector/sourcing.md), and [measurements](measurements/README.md).

@@ -15,6 +15,10 @@
 
 The module connector is a **mixed signal/power assembly**, not a single monolithic 200-pin TE 1934225-1 part. Treat 1934225-1 as the **192-contact signal core**, and 1926944-1 / 1926945-1 as observed markings on the external power/guide assemblies. The outer units' relationship to any currently orderable part number, their termination method, and their rated power contacts remain **unconfirmed**.
 
+## Availability and sourcing
+
+**Both motherboard-side sections must be sourced separately.** TE 1934318-1 is a documented mating *signal* header and has distributor offers. The Cisco-installed eight-power-contact overlay is marked 1926945-1; we found no verified manufacturer page or purchasable listing for that exact suffix. A surplus dealer lists 1926945-2, described as an eight-power-contact TE backplane header, but no substitution is approved. See the [detailed supplier register](sourcing.md) and [machine-readable sources](sourcing.csv).
+
 ## Press-fit extraction and reuse
 
 The TE Z-PACK TinMan application specification **114-13202** explicitly describes compliant press-fit headers and receptacles, suitable for unsoldered production installation. This makes **mechanical extraction plausible**, but it is not a promise of straightforward or electrically qualified reuse. The specified installation requires board support and proper seating tools; extraction of a 192-contact assembly requires evenly applied force and the corresponding backing fixtures. **Do not pry against the Cisco multilayer PCB or pull on the housing without a removal fixture.**
@@ -49,3 +53,6 @@ Product drawing and specification links are available directly on the two TE pro
 - [Mainboard moulded marking](../photos/05-switch-mainboard-connector-marking.jpg)
 
 All photos are from the hardware owner; third-party marketing imagery is excluded.
+
+- [Mainboard press-fit contact field, close-up](../photos/06-mainboard-header-pressfit-footprint-closeup.jpg)
+- [Mainboard PCB trace fan-out, close-up](../photos/07-mainboard-header-trace-fanout.jpg)
