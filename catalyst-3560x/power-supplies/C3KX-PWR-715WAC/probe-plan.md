@@ -8,12 +8,15 @@ A Delta `EDPS-715AB B` repair owner reports **internal 12 V standby and 3 V logi
 
 The highest-value first session is priorities 0–3 below. It can produce useful results without enabling the 56 V output. Keep the two OEM variants separate throughout.
 
+For a shorter **unpowered-only** first visit, use [first-session.md](first-session.md) and the [individual power-contact / return worksheet](power-contact-checks-template.csv). That worksheet adds the four visible contacts and all six pairwise checks, which the two-assembly template does not distinguish.
+
 ## Equipment and recording
 
 - Floating handheld DMM; insulated fine probes or securely retained test leads; insulating support for the module. The closed PSU case and its protective-earth connection stay intact.
 - A physically secure way to access contacts without bridging neighbours. The proposed Amphenol mate has not been trial-fitted: do not force it or rely on its nominal numbering.
 - For the low-current tests: 47 kΩ, 10 kΩ and 3.3 kΩ resistors. Ordinary 0.25 W parts suffice **for the confirmed 3.3 V test case** below. Use measured resistance values in calculations.
 - [Connector readings template](probe-readings-template.csv): one row per contact and OEM specimen, with the 1100 W reference voltage in a distinctly named comparison column.
+- [Individual power-contact checks](power-contact-checks-template.csv): temporary PC01–PC04 contact IDs, case/earth checks, all six power-contact pairs and S10/S12 return comparisons. Use resistance mode; all actual fields are blank.
 - [Standby load-test template](standby-load-tests-template.csv): prefilled with the three first-pass contacts and the three resistors for each specimen. All actual measurement fields are blank. Its resistor values apply only after a candidate is established to be near 3.3 V.
 
 Record date, instrument, full PID/VID, OEM suffix/revision and a unique specimen ID. Blank means **not measured**. Record `OL`, a changing reading or a signed voltage explicitly; do not turn them into zero. Record the meter polarity for resistance readings; the template assumes black/COM on the named reference and red on the contact unless noted otherwise.
@@ -35,11 +38,13 @@ Use the DMM's **voltage mode** across outputs; estimate load current from a know
 
 Check the photo against the [reference drawing](figures/signal-contact-map.svg). Do S07 and S11 appear shorter on this specimen, as in the related 1100 W photograph? Record the answer without assigning an interlock function. `POWER_BLADE_A` means left; `POWER_BLADE_B` means right. These are archive IDs, not connector-vendor numbers.
 
+The owner reports four individually visible power contacts. Before treating either left/right assembly as a single electrical net, label the individual contacts PC01–PC04 on the owner photograph and use the [separate worksheet](power-contact-checks-template.csv) to check their grouping. PC01–PC04 have no predefined physical positions and do not replace the source's P1/P2 or the archive's assembly IDs.
+
 **Deliverable:** one labelled photograph and specimen identity per OEM variant. If the physical arrangement differs, resolve that before transferring any source pin references.
 
 ## 1 — Find return paths with the supply unpowered
 
-With AC disconnected and accessible DC contacts discharged, measure resistance from both power contacts to the metal case, then from each signal contact to:
+With AC disconnected and accessible DC contacts discharged, first record the shorted-lead resistance and the case-to-protective-earth path. Measure resistance from **all four visible power contacts** to case and all six pairs among them, retaining polarity and settling behaviour. The prior no-beep result [M1](measurements/2026-11-25-case-bond.md) is not a resistance measurement. Once the left/right contact grouping is established, measure each signal contact to:
 
 1. Left power contact.
 2. Right power contact.
@@ -133,4 +138,4 @@ Record any pin's change of function or voltage between states. A signal that is 
 
 ## How to hand back the results
 
-Save copies of the two CSV templates under specimen/session-specific names, keeping the templates blank. Include the labelled owner photos and note any departures from this plan. Even just **the unpowered S10/S12 relationships and AC-only S03/S04/S15 readings** will substantially narrow the next investigation. The full priority 3 load readings would additionally distinguish several standby candidates from weak pull-ups.
+Save copies of the relevant CSV templates under specimen/session-specific names, keeping the templates blank. Include the labelled owner photos and note any departures from this plan. Even just **the individual power-contact grouping, case paths and S10/S12 relationships** would improve on M1. The AC-only S03/S04/S15 readings and priority 3 light-load records would then narrow the standby candidates further.

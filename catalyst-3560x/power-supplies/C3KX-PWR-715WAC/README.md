@@ -8,6 +8,7 @@
 | Main-output enable and power-blade polarity | [Reported enable connections](pinout-research.md#enable-reports-and-the-unresolved-reference-contact) and [output reference](pinout-research.md#power-contacts-and-the-sign-of-the-output) |
 | Local case/earth and blade continuity observations | [M1: preliminary owner observations, 2026-11-25](measurements/2026-11-25-case-bond.md) |
 | Low-voltage standby output | [Current findings and remaining uncertainty](pinout-research.md#standby-low-voltage-output-a-lead-not-an-established-rating) |
+| First visit to the hardware, with no mains power | [Short session guide](first-session.md) and [four-contact resistance worksheet](power-contact-checks-template.csv) |
 | What to measure next | [Prioritised probe plan](probe-plan.md), [connector readings](probe-readings-template.csv), [light-load readings](standby-load-tests-template.csv) |
 | Sources and outstanding research | [Source review](source-review.md) and [download queue](download-queue.md) |
 | Connector part and mechanical fit | [Candidate connector investigation](connector.md) |
@@ -40,6 +41,8 @@ The factory motherboard is ~2.4 mm thick at the interface. Its sockets appear fl
 The [signal-contact research and map](pinout-research.md) defines all 16 contact positions and records external evidence. Two Delta 715 W conversions show **S11–S12** joined; a related Lite-On **1100 W** report uses **S11–S10** and suggests sense and I²C contacts. A Delta repair owner labels both S10 and S12 as logic grounds, leaving S12's proposed sense role unresolved across variants. Six positions have working functional hypotheses; ten remain unidentified. These are **not locally verified assignments**. The [pin investigation worksheet](connector-pinout-worksheet.csv) includes source coordinates and the related 1100 W unit's published idle-voltage readings.
 
 ## Next probing session
+
+For an unpowered-only start, the [short session guide](first-session.md) labels all four visible power contacts individually and checks their grouping, case paths and S10/S12 relationships. Its [44-row worksheet](power-contact-checks-template.csv) has a separate set of 22 blank readings per OEM.
 
 The [prioritised probing plan](probe-plan.md) starts with unpowered return-path measurements, then checks S04/S15/S03 as possible standby-output contacts using light loads. It includes blank [connector-reading](probe-readings-template.csv) and [load-test](standby-load-tests-template.csv) templates. The reported 12/5/3.3 V, 0.5–1.5 A auxiliary supply remains unverified; voltage readings alone do not establish an available power output.
 

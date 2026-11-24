@@ -6,6 +6,8 @@ Download third-party source material to a directory **outside the repository**, 
 
 The [CSV queue](download-queue.csv) contains exact URLs, proposed basenames and the question to resolve. Priority 1 is directly relevant to standby or original pinout evidence; priority 2 may add background. Some queued requests may still need a normal browser or may return no useful content.
 
+**2026-11-25 retry:** ordinary web access still could not retrieve the Petros blog, Thingiverse project, Müller-answer comments or four remaining Stack Exchange label/internal photographs. No new source content from those seven items was inspected. They remain in the queue; `last_retry_date` and `last_retry_method` in the CSV distinguish these fresh attempts from the earlier inspection statuses. No further curl permissions were requested.
+
 ## Priority 1
 
 1. **Original Petros Projects build and comments:** [February 2021 RD6012/DPS5015 post](https://petrosprojects.blogspot.com/2021/02/diy-bech-power-supply-based-on-rd6012.html). Ordinary web access reached Google's access-interruption page, so the article and comments were not read. The indexed Thingiverse description links here. Look for connector wiring, standby/current reports, source attribution and replies explaining the fan or enable behaviour. Preserve the `bech` spelling in the URL.

@@ -1,6 +1,6 @@
 # PSU source review and unresolved evidence
 
-Reviewed 2026-11-24. Read alongside the [contact map and source register](pinout-research.md) and [probe plan](probe-plan.md). This records the useful results of the extended search, including contradictions and access limits. It is not a record of measurements on the owner's hardware.
+Initial review 2026-11-24; grounding and access follow-up 2026-11-25. Read alongside the [contact map and source register](pinout-research.md) and [probe plan](probe-plan.md). This records the useful results of the extended search, including contradictions and access limits. It is not a record of measurements on the owner's hardware.
 
 ## Scope and evidence strength
 
@@ -16,6 +16,7 @@ There are useful independent conversion observations, but no complete 16-pin fac
 | R6, oreo | Entire accessible page 2 of the five-page discussion | First-hand reuse of C3KX-PWR-715WAC in bench and charger assemblies | OEM suffix and connector wiring absent; remaining pages inaccessible through normal web tool |
 | R7, Adjal | All three public repair posts, owner photographs and reply attachments | Delta B ground annotations and internal 12 V / 3 V observation | Main output never successfully started in the report; no exported standby rating |
 | R4/R5, Cisco | Installation specifications and compatibility guidance | Main rating, LED meanings and stated replacement-family compatibility | No 16-contact assignment or external standby-current specification |
+| R8 plus R4, Cisco grounding context | Indexed regulatory text with surrounding paragraphs; accessible DC-installation PDF section | DC-I statement is scoped to DC-powered products in the regulatory text and appears under DC installation in R4 | Does not establish floating output or permitted output-to-earth voltage for these AC-input modules |
 
 `INFERRED` in the worksheet means a research hypothesis. It is not a confidence score or a substitute for measurement. Ten of the sixteen functions remain unknown, and no electrical assignment is locally `MEASURED`.
 
@@ -71,6 +72,10 @@ Retail searches also produced mismatched generic ATX connector/specification tab
 These observations are prioritised in [probe-plan.md](probe-plan.md). A useful first session can stop after returns, idle voltages and the three light-load candidates; the research does not require opening the mains enclosure.
 
 ## Repository and access handling
+
+On 2026-11-25, normal web access was retried for the original Petros blog, Thingiverse project, hidden Müller-answer comments, and four remaining Stack Exchange label/internal images. All seven attempts failed to expose new source content. These items remain queued; the [CSV](download-queue.csv) records the retry date/method without implying the materials were reviewed. Targeted searches for isolation, standby and OEM test reports found no additional pin assignment or exported auxiliary-current rating.
+
+The grounding follow-up did locate a useful scope qualification: [R8's indexed Cisco regulatory text](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3750x_3560x/hardware/regulatory/compliance/37x_rcsi.html) applies DC-I to DC-powered products. R4's PDF puts its DC-I note in the DC power-supply installation section, while HIGINSTL states the note broadly. None is sufficient evidence to reclassify the AC specimens as proven floating. The [source register](pinout-research.md#sources-and-what-was-actually-inspected) records which source forms were accessible.
 
 Only original summaries, factual transcriptions, templates and the archive's original SVG are added. No third-party photos, screenshots, models, PDFs, transcripts, HTML or API dumps are included. Source assets inspected during research were kept under `/tmp` and are not durable archive dependencies.
 
