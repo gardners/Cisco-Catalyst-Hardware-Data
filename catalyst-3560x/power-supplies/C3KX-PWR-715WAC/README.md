@@ -1,5 +1,18 @@
 # Cisco C3KX-PWR-715WAC factory power-supply module
 
+## Start here
+
+| Looking for | Resource |
+|---|---|
+| Connector orientation and all 16 signal positions | [Contact map and evidence table](pinout-research.md#all-sixteen-contacts), [original diagram](figures/signal-contact-map.svg), [CSV worksheet](connector-pinout-worksheet.csv) |
+| Main-output enable and power-blade polarity | [Reported enable connections](pinout-research.md#enable-reports-and-the-unresolved-reference-contact) and [output reference](pinout-research.md#power-contacts-and-the-sign-of-the-output) |
+| Low-voltage standby output | [Current findings and remaining uncertainty](pinout-research.md#standby-low-voltage-output-a-lead-not-an-established-rating) |
+| What to measure next | [Prioritised probe plan](probe-plan.md), [connector readings](probe-readings-template.csv), [light-load readings](standby-load-tests-template.csv) |
+| Sources and outstanding research | [Source review](source-review.md) and [download queue](download-queue.md) |
+| Connector part and mechanical fit | [Candidate connector investigation](connector.md) |
+
+The contact map contains external evidence and working hypotheses; no electrical assignment has been verified on the local specimens.
+
 ## Inspected labels
 
 - Cisco designation: `C3-KX-PWR-715WAC V01` (observed label), Cisco accessory family `C3KX-PWR-715WAC`.

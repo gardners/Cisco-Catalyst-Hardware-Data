@@ -2,6 +2,12 @@
 
 This is a **hardware-observation repository**, not a chip datasheet or a proposed replacement design. For the BCM8727 family, see the repository [independent open-source BCM8727 datasheet](../../../components/BCM8727/BCM8727_Open_Source_Datasheet.pdf), and original Broadcom/Terasic/Altera/Linux references collected under [references](references/references.md).
 
+## Start here
+
+- [Connector identification and sourcing](connector/README.md) — the 192-contact signal core and separate outer power/guide assembly.
+- [Indexed connector survey](connector/index-forensic-update.md) — photographic numbering, diagrams, all-position CSV, routing hypotheses, continuity plan and blank probe log. Electrical assignments remain unverified.
+- [Port-mode matrix](measurements/port-mode-matrix.csv) — Cisco's permitted SFP/SFP+ combinations.
+
 ## Physical identification
 
 | Property | Value | Confidence |

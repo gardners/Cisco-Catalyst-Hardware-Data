@@ -2,17 +2,23 @@
 
 Independent measurement data, photographs, component identifications, reverse-engineered schematics, and **provisional** mechanical drawings of salvaged Cisco Catalyst switch hardware. This is an observation archive, not a replacement-board or product-design project.
 
-## Catalogue
+## Find hardware data
 
-| Assembly | Data available | Confidence / open questions |
+Start with the findings linked below. Each assembly records the evidence and remaining measurements alongside its data.
+
+| Assembly | Findings and reference files | Evidence / limits |
 |---|---|---|
 | [Catalyst 3560-X / 3750-X generation](catalyst-3560x/README.md) | Donor identification notes and module families | Exact donor model should be verified from its label; geometry is not guaranteed across variants. |
 | [Mainboard mechanical survey](catalyst-3560x/mainboard/README.md) | **H01–H19 fitted hole centres**, measured edge planes, stepped perimeter, KiCad board template, SVG preview, and two **candidate** PSU connector locations | Hole coordinates are fitted relative measurements; board edge corners and PSU placement remain provisional. |
-| [Front-panel LED/USB PCB](catalyst-3560x/front-panel/README.md) | Original circuit reconstruction, 20-pin J2 map, LED mapping, KiCad schematic, photos | Control-net continuity measured; logic supply not yet confirmed. |
-| [Power supplies](catalyst-3560x/power-supplies/C3KX-PWR-715WAC/README.md) | Cisco 715 W ratings, Delta/Lite-On identifiers, PwrBlade candidate, [16-contact research map](catalyst-3560x/power-supplies/C3KX-PWR-715WAC/pinout-research.md) and conversion sources | Six signal-function hypotheses; ten signals unidentified. Enable-reference reports differ; local pinout, blade polarity and mating footprint unverified. |
+| [Front-panel LED/USB PCB](catalyst-3560x/front-panel/README.md) | [20-pin J2 map](catalyst-3560x/front-panel/docs/j2-pinout.md), [LED mapping](catalyst-3560x/front-panel/docs/led-driver.md), original circuit reconstruction, KiCad schematic and photos | Control-net continuity measured; logic supply not yet confirmed. |
+| [715 W power supplies](catalyst-3560x/power-supplies/C3KX-PWR-715WAC/README.md) | [16-contact map and diagram](catalyst-3560x/power-supplies/C3KX-PWR-715WAC/pinout-research.md#all-sixteen-contacts), [enable connections](catalyst-3560x/power-supplies/C3KX-PWR-715WAC/pinout-research.md#enable-reports-and-the-unresolved-reference-contact), [standby findings](catalyst-3560x/power-supplies/C3KX-PWR-715WAC/pinout-research.md#standby-low-voltage-output-a-lead-not-an-established-rating), ratings and connector identification | External conversion evidence; six signal-function hypotheses and ten unknowns. Local pinout and exported standby rating unverified. |
+| [C3KX-NM-10G network module](catalyst-3560x/network-modules/C3KX-NM-10G/README.md) | [Connector identification and sourcing](catalyst-3560x/network-modules/C3KX-NM-10G/connector/README.md), [192-contact photographic survey and probing resources](catalyst-3560x/network-modules/C3KX-NM-10G/connector/index-forensic-update.md), owner photos and port-mode matrix | TE signal-core identification documented; local contact index established. Electrical pin-to-net assignments unverified. |
+| [BCM8727 component reference](components/BCM8727/README.md) | [Independent technical datasheet (PDF)](components/BCM8727/BCM8727_Open_Source_Datasheet.pdf), editable source and 324-position BGA register | Public-source chip reference; incomplete ball map. Cisco module routing documented separately. |
 | [Fan cartridges](catalyst-3560x/fans/C3KX-FAN-23CFM/README.md) | Physical assembly and motor markings, connector investigation | Cartridge header pinout unverified. |
 | [Connectors index](catalyst-3560x/connectors/README.md) | Known, candidate and unidentified connectors across assemblies | No candidate should be treated as a verified substitute. |
 | [Chassis](catalyst-3560x/chassis/README.md) | Model envelope and observed shell, bays, bosses, front light-pipe features | Some dimensions are approximate, not registered to the hole survey. |
+
+For a **PSU probing session**, use the [prioritised plan and blank measurement worksheets](catalyst-3560x/power-supplies/C3KX-PWR-715WAC/probe-plan.md). For the supporting research, use the [source review](catalyst-3560x/power-supplies/C3KX-PWR-715WAC/source-review.md) and [outstanding download queue](catalyst-3560x/power-supplies/C3KX-PWR-715WAC/download-queue.md).
 
 ## Measurement conventions
 

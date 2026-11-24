@@ -15,6 +15,8 @@
 
 The module connector is a **mixed signal/power assembly**, not a single monolithic 200-pin TE 1934225-1 part. Treat 1934225-1 as the **192-contact signal core**, and 1926944-1 / 1926945-1 as observed markings on the external power/guide assemblies. The outer units' relationship to any currently orderable part number, their termination method, and their rated power contacts remain **unconfirmed**.
 
+For contact-by-contact investigation, start with the [indexed photographic survey](index-forensic-update.md): it links the 192-position register, annotated owner photos, routing hypotheses, continuity plan and blank probe log. Its local photographic coordinates have not been mapped to manufacturer pin numbers, and electrical nets remain unverified.
+
 ## Availability and sourcing
 
 **Both motherboard-side sections must be sourced separately.** TE 1934318-1 is a documented mating *signal* header and has distributor offers. The Cisco-installed eight-power-contact overlay is marked 1926945-1; we found no verified manufacturer page or purchasable listing for that exact suffix. A surplus dealer lists 1926945-2, described as an eight-power-contact TE backplane header, but no substitution is approved. See the [detailed supplier register](sourcing.md) and [machine-readable sources](sourcing.csv).

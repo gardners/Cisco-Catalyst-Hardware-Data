@@ -1,6 +1,14 @@
 # Connector and unusual interface index
 
-This is an **identification register** for the original Cisco assemblies. A part listed as CANDIDATE is not a recommendation to fit that part. There are no verified supplier footprints for the proprietary assemblies yet.
+This is an **identification register** for the original Cisco assemblies. A part listed as CANDIDATE is not a recommendation to fit that part. Follow the electrical maps below for contact identities and evidence; mechanical identification alone does not establish a pinout.
+
+## Electrical maps and probing resources
+
+- **PSU, 16 signals and two power contacts:** [contact map and external enable/standby evidence](../power-supplies/C3KX-PWR-715WAC/pinout-research.md), [CSV worksheet](../power-supplies/C3KX-PWR-715WAC/connector-pinout-worksheet.csv), and [probe plan](../power-supplies/C3KX-PWR-715WAC/probe-plan.md). Six signal-function hypotheses; no local electrical verification.
+- **Front-panel J2, 20 contacts:** [pinout and orientation](../front-panel/docs/j2-pinout.md), based on continuity and visual reconstruction; operating logic voltage remains unmeasured.
+- **Network module, 192 signal positions and eight outer contacts:** [connector identification](../network-modules/C3KX-NM-10G/connector/README.md) and [photographic contact index, routing hypotheses and continuity plan](../network-modules/C3KX-NM-10G/connector/index-forensic-update.md). The photographic index is local; electrical nets and manufacturer pin-number correspondence remain unverified.
+
+## Mechanical identification register
 
 | Original assembly / interface | Observed form | Identified part or investigation lead | Status |
 |---|---|---|---|
@@ -10,7 +18,8 @@ This is an **identification register** for the original Cisco assemblies. A part
 | Factory front-panel J1 | USB Mini-B female panel socket | USB Mini-B connector type known; OEM SKU unknown | **TYPE KNOWN / PART UNKNOWN** |
 | Front-panel SW1 | Four-land momentary switch footprint (unpopulated on specimen) | Mechanical series/actuator profile unknown | **UNIDENTIFIED** |
 | `C3KX-FAN-23CFM` cartridge | Proprietary replaceable fan-cartridge edge/header connection | Manufacturer, pinout and mate unknown | **UNIDENTIFIED** |
-| Network module (`C3KX-NM-10G`) | Removable module connector to switch mainboard | Cisco module SKU known; internal connector manufacturer/footprint unknown | **UNIDENTIFIED** |
+| Network module (`C3KX-NM-10G`) signal core | 192-contact right-angle press-fit receptacle | TE `1934225-1`; TE-listed mating signal header `1934318-1` | **IDENTIFIED SIGNAL CORE**; fitted motherboard header variant unconfirmed |
+| Network module outer power/guide assembly | Eight larger contacts, four per side | Observed markings `1926944-1` / `1926945-1`; [sourcing evidence](../network-modules/C3KX-NM-10G/connector/sourcing.md) | **MARKINGS OBSERVED**; exact orderable overlay and electrical roles unverified |
 | XPS 2200 rear power connection | Cisco external power system interface | Cisco XPS-2200 system identified; internal individual connector not surveyed | **UNSURVEYED** |
 | StackWise/StackPower on 3750-X | Rear stack cable interfaces; not universal to 3560-X | Cisco family-specific external interfaces | **UNSURVEYED** |
 
