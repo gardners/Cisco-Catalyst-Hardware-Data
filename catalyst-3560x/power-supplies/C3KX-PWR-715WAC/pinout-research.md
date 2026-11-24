@@ -86,6 +86,8 @@ Petrakis labels the left contact `56V` and the right `GND` [R1]. Lawrence calls 
 
 Cisco specifies the module output as **−56 V at 12.8 A** [R4]. A 56 V differential can be expressed as left = +56 V relative to right, or right = −56 V relative to left. Neither convention establishes a connection to chassis or protective earth. In particular, the `GND` label in a conversion diagram is not evidence of an earth bond.
 
+**Local observation added 2026-11-25:** on one specimen, the owner reports a **protective-earth-to-case bond** and **no continuity beep from case to any of four visible blade pins**. The owner clarified that only beeper mode was used: neither resistance values nor `OL` were measured. The tested OEM is not identified, and both specimens still need resistance checks; see [measurement M1](measurements/2026-11-25-case-bond.md). No beep does not establish a floating output or a permissible output-to-earth voltage. The four visible pins have not been electrically grouped by this observation. No polarity or control-return assignment is promoted to `MEASURED` from it.
+
 ## Measurements that will resolve the remaining pins
 
 For a step-by-step session, use the [prioritised probing plan](probe-plan.md); the following is an overview.

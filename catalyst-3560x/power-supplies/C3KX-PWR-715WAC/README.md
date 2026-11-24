@@ -6,6 +6,7 @@
 |---|---|
 | Connector orientation and all 16 signal positions | [Contact map and evidence table](pinout-research.md#all-sixteen-contacts), [original diagram](figures/signal-contact-map.svg), [CSV worksheet](connector-pinout-worksheet.csv) |
 | Main-output enable and power-blade polarity | [Reported enable connections](pinout-research.md#enable-reports-and-the-unresolved-reference-contact) and [output reference](pinout-research.md#power-contacts-and-the-sign-of-the-output) |
+| Local case/earth and blade continuity observations | [M1: preliminary owner observations, 2026-11-25](measurements/2026-11-25-case-bond.md) |
 | Low-voltage standby output | [Current findings and remaining uncertainty](pinout-research.md#standby-low-voltage-output-a-lead-not-an-established-rating) |
 | What to measure next | [Prioritised probe plan](probe-plan.md), [connector readings](probe-readings-template.csv), [light-load readings](standby-load-tests-template.csv) |
 | Sources and outstanding research | [Source review](source-review.md) and [download queue](download-queue.md) |
@@ -28,7 +29,7 @@ The contact map contains external evidence and working hypotheses; no electrical
 | AC input | 100–240 V AC; 50/60 Hz |
 | Enclosure dimensions (H×D×W) | ~35 × 260 × 83 mm |
 
-Cisco publishes the voltage as **−56 V**. External conversion reports suggest blade polarity and enable contacts, but the blade assignments, return reference, chassis earth relationship, standby rails, enable conditions and hot-swap sequencing remain unmeasured on these specimens.
+Cisco publishes the voltage as **−56 V**. External conversion reports suggest blade polarity and enable contacts. On one specimen, the owner reports a **protective-earth-to-case bond and no continuity beep from case to any of four visible blade pins**. This was beeper-mode testing: no actual resistance or `OL` values were obtained, and the tested OEM is not yet identified; see [M1](measurements/2026-11-25-case-bond.md). A floating output remains a hypothesis. Both specimens still need resistance measurements; blade polarity, control/standby references, available auxiliary power and enable conditions remain unverified locally.
 
 ## Factory output connector
 
