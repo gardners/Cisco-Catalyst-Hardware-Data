@@ -15,7 +15,7 @@
 | AC input | 100–240 V AC; 50/60 Hz |
 | Enclosure dimensions (H×D×W) | ~35 × 260 × 83 mm |
 
-Cisco publishes the voltage as **−56 V**, not +56 V. The blade assignments, return reference, chassis earth relationship, standby rails, enable conditions and hot-swap sequencing are unknown.
+Cisco publishes the voltage as **−56 V**. External conversion reports suggest blade polarity and enable contacts, but the blade assignments, return reference, chassis earth relationship, standby rails, enable conditions and hot-swap sequencing remain unmeasured on these specimens.
 
 ## Factory output connector
 
@@ -23,7 +23,13 @@ Observed interface: **two substantial DC blade contacts plus sixteen smaller con
 
 The factory motherboard is ~2.4 mm thick at the interface. Its sockets appear flush with the PCB edge near holes H07/H08; see the **provisional and explicitly marked socket overlay** in [mainboard survey](../../mainboard/README.md).
 
-The 16 small contact functions are **not known**. [Pin investigation worksheet](connector-pinout-worksheet.csv) remains open; no pin may safely be assumed power-good or PS-ON.
+The [signal-contact research and map](pinout-research.md) defines all 16 contact positions and records external evidence. Two Delta 715 W conversions show **S11–S12** joined; a related Lite-On **1100 W** report uses **S11–S10** and suggests sense and I²C contacts. A Delta repair owner labels both S10 and S12 as logic grounds, leaving S12's proposed sense role unresolved across variants. Six positions have working functional hypotheses; ten remain unidentified. These are **not locally verified assignments**. The [pin investigation worksheet](connector-pinout-worksheet.csv) includes source coordinates and the related 1100 W unit's published idle-voltage readings.
+
+## Next probing session
+
+The [prioritised probing plan](probe-plan.md) starts with unpowered return-path measurements, then checks S04/S15/S03 as possible standby-output contacts using light loads. It includes blank [connector-reading](probe-readings-template.csv) and [load-test](standby-load-tests-template.csv) templates. The reported 12/5/3.3 V, 0.5–1.5 A auxiliary supply remains unverified; voltage readings alone do not establish an available power output.
+
+A repair report describes **internal 12 V standby and approximately 3 V logic**, but provides no external standby pin or current rating. The [source review](source-review.md) separates primary observations from proposals and reposts. The [download queue](download-queue.md) lists useful material that normal web access could not retrieve completely; downloaded third-party material belongs outside this repository.
 
 ## Source documents
 
@@ -31,4 +37,4 @@ The 16 small contact functions are **not known**. [Pin investigation worksheet](
 - [Cisco power module service guide](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3750x_3560x/hardware/install/notes/pwr_note.html)
 - [Amphenol PwrBlade 51760-10101601AALF candidate](https://www.amphenol-cs.com/product/5176010101601aalf.html)
 
-**Warning:** This AC module contains hazardous mains circuitry and stores energy. No verified independent enable or bench-power procedure is supplied here.
+**Warning:** This AC module contains hazardous mains circuitry and stores energy. The differing reported enable-reference contacts must be resolved on each specimen before treating either conversion report as a local standalone procedure.

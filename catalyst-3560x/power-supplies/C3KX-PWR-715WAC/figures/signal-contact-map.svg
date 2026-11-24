@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="790" viewBox="0 0 1320 790" role="img" aria-labelledby="title description">
+  <title id="title">C3KX-PWR-715WAC signal-contact research map</title>
+  <desc id="description">Original schematic reference: module DC mating face, fan to right. Six tentative functions and ten unknowns. Delta reports S11 to S12 for startup; related Lite-On 1100W report uses S11 to S10. All assignments are unverified on local specimens.</desc>
+  <metadata>SPDX-License-Identifier: LGPL-3.0-or-later. Original archive drawing, 2026-11-24. Factual source references R1, R2, R3 and R7 are documented in ../pinout-research.md. No third-party graphics embedded.</metadata>
+  <rect width="1320" height="790" fill="#f8fafc" />
+  <g font-family="DejaVu Sans, sans-serif" fill="#182534">
+    <text x="40" y="48" font-size="30" font-weight="bold" text-anchor="start">715 W PSU signal-contact research</text>
+    <text x="40" y="82" font-size="19" font-weight="normal" text-anchor="start">Module DC mating face · fan on the right · functional hypotheses only</text>
+    <text x="660" y="132" font-size="17" font-weight="normal" text-anchor="middle">Broad sheet-metal wall above connector</text>
+    <line x1="235" y1="145" x2="1090" y2="145" stroke="#94a3b8" stroke-width="2" />
+    <rect x="250" y="165" width="190" height="88" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="345" y="194" font-size="21" font-weight="bold" text-anchor="middle">S01 / D1</text>
+    <text x="345" y="224" font-size="16" font-weight="normal" text-anchor="middle">Unknown</text>
+    <rect x="460" y="165" width="190" height="88" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="555" y="194" font-size="21" font-weight="bold" text-anchor="middle">S02 / D2</text>
+    <text x="555" y="224" font-size="16" font-weight="normal" text-anchor="middle">Unknown</text>
+    <rect x="670" y="165" width="190" height="88" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="765" y="194" font-size="21" font-weight="bold" text-anchor="middle">S03 / D3</text>
+    <text x="765" y="224" font-size="16" font-weight="normal" text-anchor="middle">Unknown</text>
+    <rect x="880" y="165" width="190" height="88" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="975" y="194" font-size="21" font-weight="bold" text-anchor="middle">S04 / D4</text>
+    <text x="975" y="224" font-size="16" font-weight="normal" text-anchor="middle">Unknown</text>
+    <rect x="250" y="270" width="190" height="88" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="345" y="299" font-size="21" font-weight="bold" text-anchor="middle">S05 / C1</text>
+    <text x="345" y="329" font-size="16" font-weight="normal" text-anchor="middle">Unknown</text>
+    <rect x="460" y="270" width="190" height="88" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="555" y="299" font-size="21" font-weight="bold" text-anchor="middle">S06 / C2</text>
+    <text x="555" y="329" font-size="16" font-weight="normal" text-anchor="middle">Unknown</text>
+    <rect x="670" y="270" width="190" height="88" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="765" y="299" font-size="21" font-weight="bold" text-anchor="middle">S07 / C3</text>
+    <text x="765" y="329" font-size="16" font-weight="normal" text-anchor="middle">Unknown</text>
+    <text x="765" y="348" font-size="11" font-weight="normal" text-anchor="middle">short in R2/R7 photos</text>
+    <rect x="880" y="270" width="190" height="88" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
+    <text x="975" y="299" font-size="21" font-weight="bold" text-anchor="middle">S08 / C4</text>
+    <text x="975" y="329" font-size="16" font-weight="normal" text-anchor="middle">Sense high?</text>
+    <rect x="250" y="375" width="190" height="88" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
+    <text x="345" y="404" font-size="21" font-weight="bold" text-anchor="middle">S09 / B1</text>
+    <text x="345" y="434" font-size="16" font-weight="normal" text-anchor="middle">I²C clock?</text>
+    <rect x="460" y="375" width="190" height="88" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
+    <text x="555" y="404" font-size="21" font-weight="bold" text-anchor="middle">S10 / B2</text>
+    <text x="555" y="434" font-size="16" font-weight="normal" text-anchor="middle">Logic return?</text>
+    <rect x="670" y="375" width="190" height="88" rx="10" fill="#fef3c7" stroke="#b45309" stroke-width="2" />
+    <text x="765" y="404" font-size="21" font-weight="bold" text-anchor="middle">S11 / B3</text>
+    <text x="765" y="434" font-size="16" font-weight="normal" text-anchor="middle">Output enable?</text>
+    <text x="765" y="453" font-size="11" font-weight="normal" text-anchor="middle">short in R2/R7 photos</text>
+    <rect x="880" y="375" width="190" height="88" rx="10" fill="#fef3c7" stroke="#b45309" stroke-width="2" />
+    <text x="975" y="404" font-size="21" font-weight="bold" text-anchor="middle">S12 / B4</text>
+    <text x="975" y="434" font-size="16" font-weight="normal" text-anchor="middle">Return? / sense?</text>
+    <rect x="250" y="480" width="190" height="88" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="345" y="509" font-size="21" font-weight="bold" text-anchor="middle">S13 / A1</text>
+    <text x="345" y="539" font-size="16" font-weight="normal" text-anchor="middle">Unknown</text>
+    <rect x="460" y="480" width="190" height="88" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
+    <text x="555" y="509" font-size="21" font-weight="bold" text-anchor="middle">S14 / A2</text>
+    <text x="555" y="539" font-size="16" font-weight="normal" text-anchor="middle">I²C data?</text>
+    <rect x="670" y="480" width="190" height="88" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="765" y="509" font-size="21" font-weight="bold" text-anchor="middle">S15 / A3</text>
+    <text x="765" y="539" font-size="16" font-weight="normal" text-anchor="middle">Unknown</text>
+    <rect x="880" y="480" width="190" height="88" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" />
+    <text x="975" y="509" font-size="21" font-weight="bold" text-anchor="middle">S16 / A4</text>
+    <text x="975" y="539" font-size="16" font-weight="normal" text-anchor="middle">Unknown</text>
+    <rect x="50" y="194" width="140" height="330" rx="12" fill="#e2e8f0" stroke="#64748b" stroke-width="2" />
+    <text x="120" y="280" font-size="19" font-weight="bold" text-anchor="middle">LEFT</text>
+    <text x="120" y="313" font-size="18" font-weight="normal" text-anchor="middle">power</text>
+    <text x="120" y="340" font-size="18" font-weight="normal" text-anchor="middle">contact</text>
+    <text x="120" y="395" font-size="20" font-weight="bold" text-anchor="middle">Higher?</text>
+    <text x="120" y="429" font-size="16" font-weight="normal" text-anchor="middle">potential</text>
+    <text x="120" y="473" font-size="12" font-weight="normal" text-anchor="middle">earth bond unknown</text>
+    <rect x="1125" y="194" width="140" height="330" rx="12" fill="#e2e8f0" stroke="#64748b" stroke-width="2" />
+    <text x="1195" y="280" font-size="19" font-weight="bold" text-anchor="middle">RIGHT</text>
+    <text x="1195" y="313" font-size="18" font-weight="normal" text-anchor="middle">power</text>
+    <text x="1195" y="340" font-size="18" font-weight="normal" text-anchor="middle">contact</text>
+    <text x="1195" y="395" font-size="20" font-weight="bold" text-anchor="middle">Lower?</text>
+    <text x="1195" y="429" font-size="16" font-weight="normal" text-anchor="middle">potential</text>
+    <text x="1195" y="473" font-size="12" font-weight="normal" text-anchor="middle">earth bond unknown</text>
+    <line x1="235" y1="588" x2="1090" y2="588" stroke="#94a3b8" stroke-width="4" />
+    <text x="660" y="615" font-size="17" font-weight="normal" text-anchor="middle">Folded housing seam below connector</text>
+    <text x="1195" y="574" font-size="22" font-weight="bold" text-anchor="middle">FAN →</text>
+    <text x="40" y="665" font-size="18" font-weight="bold" text-anchor="start">Delta reports [R1, R3]: S11—S12. Related Lite-On 1100 W report [R2]: S11—S10.</text>
+    <text x="40" y="697" font-size="17" font-weight="normal" text-anchor="start">Amber: Delta turn-on pair. Blue: related-family hypotheses. Grey: function unknown.</text>
+    <text x="40" y="729" font-size="17" font-weight="normal" text-anchor="start">S01–S16 are archive IDs; D1–A4 follow R2. View of the mating socket is mirrored.</text>
+    <text x="40" y="761" font-size="17" font-weight="normal" text-anchor="start">No local electrical verification. Not to scale. Sources and limits: ../pinout-research.md</text>
+  </g>
+</svg>

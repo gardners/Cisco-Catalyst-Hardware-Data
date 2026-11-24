@@ -1,19 +1,19 @@
-physical_label,function,status,observations,test_method_or_note
-S01,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S02,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S03,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S04,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S05,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S06,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S07,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S08,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S09,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S10,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S11,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S12,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S13,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S14,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S15,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-S16,UNKNOWN,UNVERIFIED,,Identify orientation/contact numbering before any electrical testing
-POWER_BLADE_A,UNKNOWN,UNVERIFIED,,Do not assume +/−56V or earth reference
-POWER_BLADE_B,UNKNOWN,UNVERIFIED,,Do not assume +/−56V or earth reference
+physical_label,function,status,observations,test_method_or_note,grid_position,source_coordinate,reference_voltage_V,reference_module,source_ids
+S01,UNKNOWN,UNVERIFIED,R2 voltage only; no supported function,Collect per-variant unpowered resistance and referenced voltage observations,row1_column1,D1,0,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+S02,UNKNOWN,UNVERIFIED,R2 voltage only; no supported function,Collect per-variant unpowered resistance and referenced voltage observations,row1_column2,D2,0.133,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+S03,UNKNOWN,UNVERIFIED,R2 voltage only; no supported function,Collect per-variant unpowered resistance and referenced voltage observations,row1_column3,D3,3.25,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+S04,UNKNOWN,UNVERIFIED,R2 voltage only; no supported function,Collect per-variant unpowered resistance and referenced voltage observations,row1_column4,D4,3.28,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+S05,UNKNOWN,UNVERIFIED,R2 voltage only; no supported function,Collect per-variant unpowered resistance and referenced voltage observations,row2_column1,C1,0,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+S06,UNKNOWN,UNVERIFIED,R2 voltage only; no supported function,Collect per-variant unpowered resistance and referenced voltage observations,row2_column2,C2,0,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+S07,UNKNOWN,UNVERIFIED,R2 and R7 mark this as a short contact; role unknown; no local measurement,Check contact length on each specimen; do not assume presence or inhibit function,row2_column3,C3,0,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2;R7
+S08,HIGH_SIDE_REMOTE_SENSE_CANDIDATE,INFERRED,R2 proposes C4 sense to left power contact; not measured on local 715W modules,Measure unpowered resistance to left power contact; confirm sense network,row2_column4,C4,0,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+S09,I2C_CLOCK_CANDIDATE,INFERRED,R2 tentatively suggests B1 as clock; no bus capture,Confirm logic reference and levels before passive capture in original switch,row3_column1,B1,3.28,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+S10,ENABLE_REFERENCE_CANDIDATE,INFERRED,R2 B3-B2 startup on Lite-On 1100W; R7 Delta B owner labels S10 logic ground; method unspecified,Establish return path and distinguish from S12 before enable testing,row3_column2,B2,0,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2;R7
+S11,MAIN_OUTPUT_ENABLE_CANDIDATE,INFERRED,R1 diagram and R3 video join S11-S12 on Delta 715W; R2 uses S11-S10 on Lite-On 1100W; R7 marks short contact near 3V,Verify orientation and short contact; resolve S10 versus S12 reference per variant,row3_column3,B3,3.25,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R1;R2;R3;R7
+S12,DELTA_TURN_ON_RETURN_CANDIDATE_OR_LOW_SIDE_SENSE,INFERRED,R1 and R3 Delta turn-on endpoint; R7 Delta B owner labels logic ground; R2 proposes low-side sense on related 1100W; conflict unresolved,Compare resistance and referenced voltage to S10 and both blades separately by variant; do not bridge S10-S12,row3_column4,B4,0,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R1;R2;R3;R7
+S13,UNKNOWN,UNVERIFIED,R2 voltage only; no supported function,Collect per-variant unpowered resistance and referenced voltage observations,row4_column1,A1,0,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+S14,I2C_DATA_CANDIDATE,INFERRED,R2 tentatively suggests A2 as data; no bus capture,Confirm logic reference and levels before passive capture in original switch,row4_column2,A2,3.28,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+S15,UNKNOWN,UNVERIFIED,R2 voltage only; no supported function,Collect per-variant unpowered resistance and referenced voltage observations,row4_column3,A3,3.26,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+S16,UNKNOWN,UNVERIFIED,R2 voltage only; no supported function,Collect per-variant unpowered resistance and referenced voltage observations,row4_column4,A4,0,EXTERNAL Lite-On C3KX-PWR-1100WAC V02; AC applied; main output disabled; relative to LEFT power contact,R2
+POWER_BLADE_A,HIGHER_POTENTIAL_OUTPUT_CANDIDATE,INFERRED,R1 diagram and R2 suggest polarity; R3 red wire on left consistent but not measured; earth relationship unmeasured locally,Module mating face; fan right; confirm differential polarity and case reference independently,LEFT_POWER_CONTACT,P1,,,R1;R2;R3;R4
+POWER_BLADE_B,LOWER_POTENTIAL_OUTPUT_CANDIDATE,INFERRED,R1 diagram and R2 suggest polarity; R3 black wire on right consistent but not measured; earth relationship unmeasured locally,Module mating face; fan right; confirm differential polarity and case reference independently,RIGHT_POWER_CONTACT,P2,,,R1;R2;R3;R4

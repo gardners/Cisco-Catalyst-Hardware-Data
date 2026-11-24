@@ -18,6 +18,10 @@ Candidate: **Amphenol/FCI `51760-10101601AALF`**, a 1P + 16S + 1P right-angle re
 
 Other previously investigated, lower-confidence alternatives: `51740-10101601AALF` (different orientation), `10106126-4004001LF`, `51770-030LF`, `51740-10201602AALF` (different guide/power-contact configurations; do not treat as matches).
 
+## Electrical contact investigation
+
+The [signal-contact research](pinout-research.md) defines a module-face orientation, maps S01–S16 to external source coordinates, and records candidate enable, remote-sense and I²C functions. Those archive identifiers are not manufacturer pin numbers. The Delta 715 W and related Lite-On 1100 W reports use different reference contacts for enabling the output; neither identifies the actual mating connector SKU or verifies this repository's modules.
+
 ## Position investigation
 
 The first small board-lock feature of each candidate footprint was **estimated** at ~11 mm and ~102 mm from the original PCB's local left edge (pitch ~91 mm). The candidate footprint's second board-lock is 31.75 mm farther along X. The fitted mainboard survey places the relevant local left edge at underside X≈−13.13 mm and local mating edge at Y≈87.60 mm. Those hypotheses are translated into local survey coordinates in [`../../mainboard/psu-socket-hypotheses.csv`](../../mainboard/psu-socket-hypotheses.csv), which also documents the *unverified* placement assumptions. The KiCad drawing uses no manufactured connector pads/holes for them.
