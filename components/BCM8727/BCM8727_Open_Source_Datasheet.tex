@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[default]{sourcesanspro}
 \usepackage[a4paper,margin=18mm,headheight=16pt,footskip=11mm]{geometry}
-\usepackage{microtype,booktabs,longtable,tabularx,array,enumitem,xcolor,colortbl,hyperref,fancyhdr,graphicx,pdflscape,multicol}
+\usepackage{microtype,booktabs,longtable,tabularx,array,enumitem,xcolor,colortbl,hyperref,fancyhdr,graphicx,pdflscape,multicol,xurl}
 \definecolor{navy}{HTML}{15334B}
 \definecolor{blue}{HTML}{275D8B}
 \definecolor{pale}{HTML}{ECF3F8}
@@ -27,7 +27,7 @@
 \setlength{\LTpost}{5pt}
 \renewcommand{\arraystretch}{1.14}
 \setlist[itemize]{leftmargin=15pt,itemsep=1pt,topsep=1pt}
-\pagestyle{fancy}\fancyhf{}\lhead{\footnotesize\color{navy} BCM8727 | OPEN TECHNICAL DATASHEET}\rhead{\footnotesize Rev 0.2 | 24 Nov 2026}\cfoot{\footnotesize\thepage}
+\pagestyle{fancy}\fancyhf{}\lhead{\footnotesize\color{navy} BCM8727 | OPEN TECHNICAL DATASHEET}\rhead{\footnotesize Rev 0.3 | 25 Nov 2026}\cfoot{\footnotesize\thepage}
 \newcommand{\m}[1]{\textsf{\color{blue}\bfseries #1}}
 \newcommand{\unk}{\textsf{\color{amber}\bfseries U}}
 \newcommand{\src}[1]{\textsuperscript{[#1]}}
@@ -37,8 +37,8 @@
 \vspace{1mm}{\large Dual-channel 10GbE SFI--XAUI transceiver with EDC}\par
 \vspace{2mm}\hrule height 1pt\relax\vspace{3mm}
 \begin{tabularx}{\linewidth}{@{}>{\bfseries}p{30mm}X>{\bfseries}p{25mm}X@{}}
-Document & B8727-OSDS-001 & Revision & 0.2 \\
-Family & BCM8727 & Date & 24 November 2026 \\
+Document & B8727-OSDS-001 & Revision & 0.3 \\
+Family & BCM8727 & Date & 25 November 2026 \\
 Package & 324-ball BGA, 19 x 19 mm & Interface & 2 x XAUI + 2 x SFI \\
 Status & Independent, partial public-data compilation & Approval & NOT for PCB release
 \end{tabularx}
@@ -55,6 +55,8 @@ Status & Independent, partial public-data compilation & Approval & NOT for PCB r
 \m{R} & Named BGA ball or characteristic reported in an independent PCB manufacturer's working reference design (Terasic U6). Applies to its BCM8727, but suffix/revision transfer is unconfirmed. \\
 \m{S} & Operational register or behaviour supported by public Linux driver source or Intel/Altera interoperability design, not necessarily a manufacturer guarantee. \\
 \m{I} & Engineering inference derived from cited data; assumption stated and may require verification. \\
+\m{X} & Experimental/unmerged driver modification with explicit register writes; not a vendor qualification or a guarantee of functioning on all revisions. \\
+\m{C} & A register/function on a *different* PHY for comparative probing only; explicitly *not* assigned to BCM8727. \\
 \unk & Not identified in the cited open material. \textbf{Unknown is not NC, VSS, or VDD.} No net or voltage may be assigned from this state. \\\bottomrule
 \end{tabularx}
 The default source for every named package ball is Terasic's U6 Table 4-1 \src{T}; confidence \m{R} unless another mark is shown. The row/column pattern is based on a nominal full 18 x 18 array \m{I}; physical A1 orientation has not been validated against Broadcom packaging artwork.
@@ -129,13 +131,110 @@ Vendor 1G mode, EDC, DAC setup & various & \unk & See \texttt{bnx2x\_link.c} for
 \bottomrule\end{tabularx}
 \subsection{Boot, NVM and optics-control pins}
 The device exposes SPI ROM clocks, data and chip select per channel; serial boot enable at H10; a configurable BSC/two-wire interface, and per-channel optics control/status. The presence of these pins does not establish a mandatory external ROM image or boot algorithm. The public product brief does not provide an ordered register initialisation sequence, strap truth table, default PHY addresses, nor firmware image format. Each is \unk.
-\section{Package and BGA naming}
-Broadcom specifies 324 balls in a 19 x 19 mm body with 1 mm pitch \m{P}. The following index assumes a full 18-by-18 grid with row labels \texttt{A B C D E F G H J K L M N P R T U V} and columns 1--18 \m{I}; all 324 positions are indexed. Terasic provides names for \textbf{110} positions \m{R}. The remaining \textbf{214} positions are uncharacterised \unk, including potentially critical supply and ground balls. \textbf{Do not design a footprint from this index without the manufacturer's package mechanical drawing and verified A1 orientation.}
-\subsection{Complete 324-position class matrix}
-\begin{landscape}
+
+\section{Open-source register map (partial)}
+\label{sec:register-map}
+\textbf{Address convention:} All register references use IEEE 802.3 Clause 45 \textbf{(MMD, 16-bit register)} tuples, not flat addresses. MMD 1 is PMA/PMD, MMD 3 is PCS, MMD 4 is PHY XS, and MMD 7 is AN. An offset appearing in another MMD is a \emph{different register}. Numeric addresses prefixed \texttt{0x} are hexadecimal. \textbf{Tables below contain observed uses and known gaps, not a complete Broadcom register specification.}
+
+\subsection{BCM8727 register address inventory}
+\scriptsize
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\begin{longtable}{@{}p{19mm}p{42mm}p{85mm}p{10mm}@{}}
+\toprule
+\textbf{MMD:offset} & \textbf{Driver name / category} & \textbf{Observed purpose and values} & \textbf{Class}\\\midrule
+\endfirsthead
+\toprule
+\textbf{MMD:offset} & \textbf{Driver name / category} & \textbf{Observed purpose and values} & \textbf{Class}\\\midrule
+\endhead
+\texttt{1:0x0000} & \texttt{PMA\_CONTROL} & Clause 45 PMA control; mainline bnx2x writes 0x0040 (1G) or 0x2040 (10G). & \m{S}\src{N} \\
+\texttt{1:0x0007} & \texttt{PMA\_10G\_CONTROL2} & PMA/PMD operating type; writes 0x000D (1G) or 0x0008 (10G). & \m{S}\src{N} \\
+\texttt{1:0x000A} & \texttt{PMA\_RX\_SIGNAL\_DETECT} & Optical receive-signal detect/status. & \m{S}\src{L} \\
+\texttt{1:0x8000} & \texttt{SFP\_TWO\_WIRE\_CTRL} & SFP two-wire engine start/status; status mask 0x000C (idle 0x0000; complete 0x0004; progress 0x0008; failed 0x000C). & \m{S}\src{H,N} \\
+\texttt{1:0x8002} & \texttt{SFP\_TWO\_WIRE\_BYTE\_CNT} & Requested two-wire transfer byte count. & \m{S}\src{H,N} \\
+\texttt{1:0x8003} & \texttt{SFP\_TWO\_WIRE\_MEM\_ADDR} & SFP EEPROM byte offset. & \m{S}\src{H,N} \\
+\texttt{1:0x8005} & \texttt{BCM8727\_TWO\_WIRE\_SLAVE\_ADDR} & SFP two-wire slave address for onboard bridge. & \m{S}\src{H,N} \\
+\texttt{1:0x8007+} & \texttt{BCM8727\_TWO\_WIRE\_DATA\_BUF} & Byte data words; driver reads 0x8007+i and masks low 8 bits. & \m{S}\src{H,N} \\
+\texttt{1:0xC808} & \texttt{BCM8727\_PCS\_OPT\_CTRL} & PCS/optical controls and status/LED bits used by bnx2x; device tree example masks with 0xFF8F and value 0x0070. & \m{S}\src{H,N,D} \\
+\texttt{1:0xC80E} & \texttt{BCM8727\_GPIO\_CTRL} & Vendor GPIO/optics management control. & \m{S}\src{H,N} \\
+\texttt{1:0xC842} & \texttt{BCM8727\_PCS\_GP} & PCS general-purpose / XAUI-side power management; 1G dual-media code adjusts bits 10-11. & \m{S}\src{H,N} \\
+\texttt{1:0xC8E4} & \texttt{BCM8727\_OPT\_CFG} & Optical-module config, modes and limiting/linear selection. & \m{S}\src{H,N} \\
+\texttt{1:0xCA02} & \texttt{BCM8727\_TX\_CTRL1} & Optical transmit control, including transmitter-disable paths. & \m{S}\src{H,N} \\
+\texttt{1:0xCA05} & \texttt{BCM8727\_TX\_CTRL2} & Second transmitter-control word. & \m{S}\src{H,N} \\
+\texttt{3:0x0020} & \texttt{PCS\_10GBASER\_STATUS} & 10GBASE-R PCS status sampled by generic BCM87xx PHY driver. & \m{S}\src{L} \\
+\texttt{3:0x9002} & \texttt{LASI\_CONTROL} & Link alarm status interrupt enable/control. & \m{S}\src{L} \\
+\texttt{3:0x9005} & \texttt{LASI\_STATUS} & Link alarm status interrupt state. & \m{S}\src{L} \\
+\texttt{4:0x0018} & \texttt{XGXS\_LANE\_STATUS} & XAUI XGXS lane status register. & \m{S}\src{L} \\
+\texttt{7:0x8309} & \texttt{BCM8727\_MISC\_CTRL} & Misc AN / Clause 37 mode control; bnx2x writes 0x0000 in 1G AN and 0x0020 for 10G. & \m{S}\src{H,N} \\
+\texttt{7:0x8308} & \texttt{BCM8727\_MISC\_CTRL1} & Experimental 2.5G mode word: patch writes 0x0010; normal/fallback path writes 0x001C. & \m{X}\src{X} \\
+\texttt{7:0x8309} & \texttt{BCM8727\_MISC\_CTRL2\_PATCH} & In 2.5G experimental patch clear bit 5. & \m{X}\src{X} \\
+\bottomrule
+\end{longtable}
+\normalsize
+\textbf{Caution:} Read-only versus read/write, volatile reset values, per-channel register banking, and meaningful bit masks are generally \unk{}. In the table, ``S'' means observed in released software; it does not imply that every bitfield has been verified. See the machine-readable \texttt{BCM8727\_register\_map.csv} for per-entry caveats and exact source tags.
+
+\subsection{Observed BCM8727 operating-mode writes}
+\begin{tabularx}{\linewidth}{@{}p{31mm}p{34mm}p{34mm}X@{}}\toprule
+\textbf{Mode} & \textbf{MMD 1:0x0000} & \textbf{MMD 1:0x0007} & \textbf{Other settings / confidence}\\\midrule
+1G forced / 1G SFP & \texttt{0x0040} & \texttt{0x000D} & Mainline \texttt{bnx2x}; Clause 37 configuration varies. \m{S}\src{N}\\
+10G & \texttt{0x2040} & \texttt{0x0008} & MMD 7:0x8309 written with \texttt{0x0020}; Clause 37 disabled as needed. \m{S}\src{N}\\
+Experimental 2.5G & 1G-compatible pathway & 1G-compatible pathway & Additional MMD 7:0x8308 write \texttt{0x0010} and MMD 7:0x8309 bit 5 clear. \m{X}\src{X}\\
+\bottomrule\end{tabularx}
+The exact numerical offset of the driver macro \texttt{MDIO\_AN\_REG\_CL37\_AN} is deliberately \unk{} in this document: its \emph{symbolic} writes (\texttt{0x1300} to configure Clause 37; \texttt{0x0100} in the 10G branch) are observed, but this revision has not independently verified the macro's numerical expansion. Do not conflate it with MMD 7:0x8309.
+
+\subsection{Experimental 2.5G configuration -- not a product specification}
+\begin{tabularx}{\linewidth}{@{}p{42mm}X@{}}\toprule
+\textbf{Programming target} & \textbf{Evidence and exact action}\\\midrule
+BCM8727 AN MMD 7, \texttt{0x8308} & Unofficial Linux patch writes \texttt{0x0010} for 2.5G; writes \texttt{0x001C} in the normal branch. \m{X}\src{X}\\
+BCM8727 AN MMD 7, \texttt{0x8309} & Patch clears bit 5 for 2.5G (read-modify-write). This is the \emph{same} mainline \texttt{MISC\_CTRL} register, not a second hardware register. \m{X}\src{X}\\
+Host Warpcore SerDes (\emph{not BCM8727}) & Patch writes \texttt{0x6010} to \texttt{MDIO\_WC\_REG\_SERDESDIGITAL\_MISC1}, then follows a 1G-compatible host control branch. Host register numeric address is not established here. \m{X}\src{X}\\
+Link reporting & Patch interprets its driver \texttt{link\_status} word using bit 1 set and bit 14 clear as 2.5G. The associated hardware MDIO register is \textbf{not established} here. \m{X}\src{X}\\
+FreeBSD host/PHY reviews & D40358 addresses Warpcore 2500BASE-X; D40359 addresses BCM8727 2500BASE-X, both proposed 2023. These support a two-sided configuration strategy, but not a released, manufacturer-qualified rate. \m{X}\src{F1}\src{F2}\\
+\bottomrule\end{tabularx}
+\textbf{Interpretation:} These source changes are credible experimental register evidence. They do \emph{not} establish an ordinary self-contained 2.5G mode on arbitrary hosts, nor 2.5G support on a particular BCM8727 suffix, board or firmware revision. A full bring-up requires host-SerDes configuration, optics compatibility, board timing and status validation. No evidenced 5G mode or four independent 1G logical ports has been located for BCM8727.
+
+\subsection{Register-access and SFP EEPROM observations}
+The \texttt{bnx2x} PHY driver implements SFP EEPROM reads by programming the BCM8727's MMD 1 two-wire control window: offset \texttt{0x8000} (transfer/status), \texttt{0x8002} (byte count), \texttt{0x8003} (EEPROM address), \texttt{0x8005} (slave address), and \texttt{0x8007+i} (byte buffer; low eight bits). It checks status bits \texttt{0x000C}, with documented driver values idle \texttt{0x0000}, complete \texttt{0x0004}, in progress \texttt{0x0008}, failed \texttt{0x000C}. \m{S}\src{H}\src{N}
+
+This is a \emph{PHY-internal controller accessed over MDIO}, not evidence that the host directly drives an I\textsuperscript{2}C pair on the Cisco connector. The serial EEPROM internal to the \emph{Cisco sled} is a separate component; its protocol and connector mapping are unresolved.
+
+\subsection{Different chip families: comparison-only register candidates}
+\textbf{None of the addresses below is assigned to BCM8727 by these sources.} Their purpose is to identify useful patterns for later comparative MDIO probing. In particular, the copper BCM8481 has XAUI/SGMII host interfaces, while the newer BCM84881/84891 family uses a separately documented register set. Shared manufacturer branding does not establish address compatibility. \m{C}\src{C1}\src{C2}\src{H}
 \small
-\textbf{Figure: logical ball-index matrix, not a solder-footprint orientation diagram.} Each cell reports the signal class (see legend); ? means function unknown.\\[2mm]
-\resizebox{0.90\linewidth}{!}{%
+\begin{longtable}{@{}p{38mm}p{21mm}p{35mm}p{65mm}@{}}\toprule
+\textbf{Device} & \textbf{MMD:offset} & \textbf{Register label} & \textbf{Interpretation; status}\\\midrule\endfirsthead
+\toprule \textbf{Device} & \textbf{MMD:offset} & \textbf{Register label} & \textbf{Interpretation; status}\\\midrule\endhead
+BCM8481 & \texttt{1:0xA811} & \texttt{PMD\_SIGNAL} & Explicit BCM8481 macro in bnx2x header; check only, no BCM8727 confirmation \\
+BCM8481 & \texttt{1:0xA82C} & \texttt{LED1\_MASK} & Copper PHY LED mask; comparator only \\
+BCM8481 & \texttt{1:0xA82F} & \texttt{LED2\_MASK} & Copper PHY LED mask; comparator only \\
+BCM8481 & \texttt{1:0xA832} & \texttt{LED3\_MASK} & Copper PHY LED mask; comparator only \\
+BCM8481 & \texttt{1:0xA834} & \texttt{LED3\_BLINK} & Copper PHY LED blink; comparator only \\
+BCM8481 & \texttt{1:0xA838} & \texttt{LED5\_MASK} & Copper PHY LED mask; comparator only \\
+BCM8481 & \texttt{1:0xA835} & \texttt{SIGNAL\_MASK} & Copper PHY signal control; comparator only \\
+BCM8481 & \texttt{1:0xA83B} & \texttt{LINK\_SIGNAL} & Copper PHY link-status/LED controls; comparator only \\
+BCM84881/84891 & \texttt{30:0x4011} & \texttt{HOST\_LINK\_MODE} & Vendor1 status; 84881 driver decodes status as SGMII/10G/2500BASE-X/5G; different generation and host interface \\
+\bottomrule\end{longtable}
+\normalsize
+The BCM8481 brief describes one XAUI lane reserved for SGMII when operating at 10/100/1000 rates, which establishes an \emph{architectural analogue}, \textbf{not} a BCM8727 lane-splitting control register. The BCM84881/84891 driver decodes MMD 30:0x4011 modes corresponding to SGMII, 10GBASE-R, 2500BASE-X and 5G on its own hardware. Assigning those bits to BCM8727 would be unjustified. \m{C}\src{C1}\src{C2}
+
+\subsection{Availability of other open-source implementations}
+\begin{tabularx}{\linewidth}{@{}p{27mm}p{52mm}X@{}}\toprule
+\textbf{Source} & \textbf{Code or review} & \textbf{Contribution to BCM8727 register map}\\\midrule
+Linux (mainline) & \texttt{bnx2x\_link.c}, \texttt{bnx2x\_reg.h} & Best BCM8727-specific speed, module control, two-wire and vendor register examples. \m{S}\\
+Linux (mainline) & \texttt{bcm87xx.c} & PHY ID \texttt{0x0143BFF0}, Clause 45 link detect, PCS, XAUI lane and LASI status. \m{S}\\
+FreeBSD / OPNsense & \texttt{bxe} plus D40358 and D40359 & Source lineage related to Linux Broadcom drivers; additional experimental 2.5G review, \textbf{not independent silicon documentation}. \m{X}\\
+DPDK / TRex & \texttt{bnx2x} / \texttt{ecore} & Ported Broadcom-derived register definitions; mostly corroboration, not independent assignments. \m{S}\\
+OpenBSD/NetBSD & \texttt{bnx}, \texttt{bnxt} & No identified BCM8727-specific programming path. These names refer primarily to different Broadcom MAC/controller families. \unk{}\\
+ReactOS & No identified BCM8727-specific PHY implementation & No additional register evidence established. \unk{}\\
+\bottomrule\end{tabularx}
+
+\textbf{Design warning:} A Linux registration of \texttt{PHY\_ID\_BCM8727} may use a masked ID match; a diagnostic program should read both Clause 45 ID words rather than assuming an exact 32-bit ID value on every revision. Register writes can disable optics, link training, or clocking. Do not bulk-write unknown vendor offsets on an operational system.
+
+
+\begin{landscape}
+\section{Package and BGA naming}
+\small\textbf{Logical 324-ball class map.} Marked positions come from the Terasic U6 reference design; question marks are \textbf{unknown}, not NC. This is \textbf{not a footprint orientation drawing}.\\[1mm]
+\resizebox{0.82\linewidth}{!}{%
 \begin{tabular}{@{}r|*{18}{c}@{}}\toprule
 \textbf{Row} & \multicolumn{18}{c}{\textbf{Ball number}}\\
  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 \\\midrule
@@ -166,6 +265,7 @@ V & \cellcolor{clck}CK & \cellcolor{clun}? & \cellcolor{clsx}SX & \cellcolor{cls
 \cellcolor{clio}IO & GPIO & \cellcolor{clan}AN & analogue & \cellcolor{clun}? & \textbf{unknown}\\
 \end{tabularx}
 \end{landscape}
+Broadcom describes a 19 x 19 mm, 324-ball BGA with 1 mm nominal pitch \m{P}. The logical index assumes a full 18-by-18 grid with letter rows \texttt{A B C D E F G H J K L M N P R T U V} and numeric columns 1--18 \m{I}. Terasic identifies \textbf{110} functions \m{R}; the other \textbf{214} locations remain uncharacterised, potentially including essential supplies and grounds \unk. The package A1 corner, exact BGA footprint and suffix-specific pin equivalence are not independently validated. \textbf{Do not release a PCB from this index.}
 \subsection{Named balls (Terasic U6 reference assignments)}
 All ball-to-signal mappings in this table are \m{R} -- Terasic's BCM8727 U6 design. Pin functions are abbreviated descriptions, not Broadcom electrical specifications. On that design, \texttt{TX} and \texttt{RX} denote PHY input and output respectively (for XAUI).
 \small
@@ -346,7 +446,7 @@ Boot & SER\_BOOT behaviour, SPI flash contents, boot sequencing, fault fallback.
 Package & Ball A1 corner, package height and ball diameter, coplanarity, land/stencil, MSL, thermal resistance.\\
 Software & Complete vendor register map, defaults, bit definitions, recommended firmware and init sequence.\\\bottomrule\end{tabularx}
 \section{References}
-\small
+\small\sloppy
 \begin{description}[leftmargin=11mm,labelwidth=9mm,style=nextline]
 \item[{[B]}] Broadcom, \emph{BCM8727 Product Brief}, document 8727-PB00-R (16 Mar 2009). \url{https://docs.broadcom.com/doc/12358272}
 \item[{[T]}] Terasic, \emph{Dual XAUI to SFP+ HSMC Board User Manual}, Table 4-1 BCM8727 U6 net connections and section 4.3 clocking. \url{https://datasheet.ersaelectronics.com/static/datasheets/terasic/terasic-p0092.pdf}
@@ -354,7 +454,16 @@ Software & Complete vendor register map, defaults, bit definitions, recommended 
 \item[{[L]}] Linux kernel, \texttt{drivers/net/phy/bcm87xx.c}, PHY ID and Clause 45 status/interrupts (GPL-2.0 source). \url{https://codebrowser.dev/linux/linux/drivers/net/phy/bcm87xx.c.html}
 \item[{[N]}] Linux kernel, \texttt{drivers/net/ethernet/broadcom/bnx2x/bnx2x\_link.c}, PHY/SFP handling implementation (GPL-2.0 source). \url{https://codebrowser.dev/linux/linux/drivers/net/ethernet/broadcom/bnx2x/bnx2x_link.c.html}
 \item[{[D]}] Linux kernel, \emph{Broadcom BCM87xx device-tree binding}, optional \texttt{broadcom,c45-reg-init} property. \url{https://github.com/torvalds/linux/blob/master/Documentation/devicetree/bindings/net/broadcom-bcm87xx.txt}
+\item[{[H]}] Linux \texttt{bnx2x\_reg.h}: named BCM8727 and shared SFP two-wire registers. \url{https://github.com/torvalds/linux/blob/master/drivers/net/ethernet/broadcom/bnx2x/bnx2x_reg.h}
+\item[{[X]}] JAMESMTL, experimental Linux BCM8727 / Warpcore 2.5G patch. \url{https://github.com/JAMESMTL/snippets/blob/master/bnx2x/patches/bnx2x_warpcore_8727_2_5g_sgmii_txfault.patch}
+\item[{[F1]}] FreeBSD review D40358 (2023), host Warpcore 2500BASE-X. \url{https://reviews.freebsd.org/D40358}
+\item[{[F2]}] FreeBSD review D40359 (2023), \texttt{bxe} BCM8727 2500BASE-X. \url{https://reviews.freebsd.org/D40359}
+\item[{[P2]}] OPNsense/FreeBSD \texttt{bxe} patch example (additional implementation). \url{https://github.com/akhamar/orange-2500mbps-G010SP/blob/master/opnsense_22.X/upnatom_bxe_patch.txt}
+\item[{[C1]}] Broadcom, \emph{BCM8481 10GBASE-T PHY product brief}; copper XAUI/SGMII architectural comparison only. \url{https://docs.broadcom.com/doc/12358255}
+\item[{[C2]}] Linux \texttt{bcm84881.c}, BCM84881/84891/84892 vendor mode status (MMD 30:0x4011); NOT BCM8727. \url{https://github.com/torvalds/linux/blob/master/drivers/net/phy/bcm84881.c}
+\item[{[DP]}] DPDK \texttt{bnx2x} PMD and ecore, Broadcom-derived port of some register definitions. \url{https://github.com/DPDK/dpdk/tree/main/drivers/net/bnx2x}
+\item[{[Q]}] Broadcom-origin 2010 Linux fix correcting BCM8727 1G-to-10G register selection. \url{https://lists.openwall.net/netdev/2010/09/01/68}
 \item[{[F]}] Terasic, \emph{XSFP FAQ}, notes that detailed Broadcom device documentation is not redistributed by Terasic. \url{https://www.terasic.com.tw/wiki/XSFP_FAQ}
-\end{description}
+\end{description}\fussy
 \vspace{2mm}\hrule\vspace{2mm}\footnotesize Latest version: \url{https://github.com/gardners/Cisco-Catalyst-Hardware-Data}.\par This is an independent original compilation of factual characteristics and selected signal assignments with source attribution. It is not endorsed or verified by Broadcom. Neither vendor PDF pages nor third-party photographs are reproduced. Unknown positions remain intentionally unspecified.\normalsize
 \end{document}
