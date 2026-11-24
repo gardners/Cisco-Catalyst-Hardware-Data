@@ -1,0 +1,10 @@
+device,mmd,offset,symbol,evidence_limit
+BCM8481,1,0xA811,PMD_SIGNAL,"Explicit BCM8481 macro in bnx2x header; check only, no BCM8727 confirmation"
+BCM8481,1,0xA82C,LED1_MASK,Copper PHY LED mask; comparator only
+BCM8481,1,0xA82F,LED2_MASK,Copper PHY LED mask; comparator only
+BCM8481,1,0xA832,LED3_MASK,Copper PHY LED mask; comparator only
+BCM8481,1,0xA834,LED3_BLINK,Copper PHY LED blink; comparator only
+BCM8481,1,0xA838,LED5_MASK,Copper PHY LED mask; comparator only
+BCM8481,1,0xA835,SIGNAL_MASK,Copper PHY signal control; comparator only
+BCM8481,1,0xA83B,LINK_SIGNAL,Copper PHY link-status/LED controls; comparator only
+BCM84881/84891,30,0x4011,HOST_LINK_MODE,Vendor1 status; 84881 driver decodes status as SGMII/10G/2500BASE-X/5G; different generation and host interface

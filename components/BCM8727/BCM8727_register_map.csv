@@ -1,0 +1,22 @@
+MMD,address,symbol,observed_role,confidence,sources,limitations
+1,0x0000,PMA_CONTROL,Clause 45 PMA control; mainline bnx2x writes 0x0040 (1G) or 0x2040 (10G).,S,N,"Software configuration values, not a complete reset-bit map."
+1,0x0007,PMA_10G_CONTROL2,PMA/PMD operating type; writes 0x000D (1G) or 0x0008 (10G).,S,N,Register name in driver is MDIO_PMA_REG_10G_CTRL2.
+1,0x000A,PMA_RX_SIGNAL_DETECT,Optical receive-signal detect/status.,S,L,Read by generic BCM87xx driver; individual bits not fully documented.
+1,0x8000,SFP_TWO_WIRE_CTRL,SFP two-wire engine start/status; status mask 0x000C (idle 0x0000; complete 0x0004; progress 0x0008; failed 0x000C).,S,"H,N",Not a generic I2C controller; command field and byte-transfer limits require confirmation.
+1,0x8002,SFP_TWO_WIRE_BYTE_CNT,Requested two-wire transfer byte count.,S,"H,N",Operational limits unknown.
+1,0x8003,SFP_TWO_WIRE_MEM_ADDR,SFP EEPROM byte offset.,S,"H,N",Do not confuse with MDIO address.
+1,0x8005,BCM8727_TWO_WIRE_SLAVE_ADDR,SFP two-wire slave address for onboard bridge.,S,"H,N",I2C address encoding (7-bit vs 8-bit) to verify from complete call sequence.
+1,0x8007+,BCM8727_TWO_WIRE_DATA_BUF,Byte data words; driver reads 0x8007+i and masks low 8 bits.,S,"H,N",Plus sign denotes consecutive locations; maximum extent unknown.
+1,0xC808,BCM8727_PCS_OPT_CTRL,PCS/optical controls and status/LED bits used by bnx2x; device tree example masks with 0xFF8F and value 0x0070.,S,"H,N,D",Treat exact bit meaning as contextual and device revision dependent.
+1,0xC80E,BCM8727_GPIO_CTRL,Vendor GPIO/optics management control.,S,"H,N",Bit definitions only partially inferable from driver.
+1,0xC842,BCM8727_PCS_GP,PCS general-purpose / XAUI-side power management; 1G dual-media code adjusts bits 10-11.,S,"H,N",Bits 10-11 use contextual sequence; not complete power-control truth table.
+1,0xC8E4,BCM8727_OPT_CFG,"Optical-module config, modes and limiting/linear selection.",S,"H,N",Numeric bitfields are not fully manufacturer-documented.
+1,0xCA02,BCM8727_TX_CTRL1,"Optical transmit control, including transmitter-disable paths.",S,"H,N",Do not use bit patterns from BCM8726 without verification.
+1,0xCA05,BCM8727_TX_CTRL2,Second transmitter-control word.,S,"H,N",Partially decoded via driver; not a full register definition.
+3,0x0020,PCS_10GBASER_STATUS,10GBASE-R PCS status sampled by generic BCM87xx PHY driver.,S,L,Bits reported using standard/status conventions.
+3,0x9002,LASI_CONTROL,Link alarm status interrupt enable/control.,S,L,Shared-family PHY usage; exact masks vary by board.
+3,0x9005,LASI_STATUS,Link alarm status interrupt state.,S,L,Usually read alongside other PCS/PMD status.
+4,0x0018,XGXS_LANE_STATUS,XAUI XGXS lane status register.,S,L,Lane-by-lane bits not completely decoded in datasheet.
+7,0x8309,BCM8727_MISC_CTRL,Misc AN / Clause 37 mode control; bnx2x writes 0x0000 in 1G AN and 0x0020 for 10G.,S,"H,N",Mainline symbol; patch renames it MISC_CTRL2.
+7,0x8308,BCM8727_MISC_CTRL1,Experimental 2.5G mode word: patch writes 0x0010; normal/fallback path writes 0x001C.,X,X,Not present as BCM8727 register name in mainline 1G/10G driver.
+7,0x8309,BCM8727_MISC_CTRL2_PATCH,In 2.5G experimental patch clear bit 5.,X,X,Same numeric address as mainline MISC_CTRL; NOT a new register.
